@@ -24,12 +24,22 @@ window.addEventListener('scroll', function() {
 document.getElementById('contact-form').addEventListener('submit', function(event) {
     event.preventDefault(); // Evita o envio tradicional
     const formData = new FormData(this);
+
     fetch('https://hooks.zapier.com/hooks/catch/XXXXXXXXX/XXXXXX/', {
         method: 'POST',
         body: formData
     })
-    .then(response => response.json())
-    .then(data => alert('Formulário enviado com sucesso!'))
-    .catch(error => alert('Erro ao enviar formulário.'));
+    .then(response => {
+        if (response.ok) {
+            alert('Formulário enviado com sucesso!');
+            window.location.reload(); // Recarrega a página após sucesso
+        } else {
+            throw new Error('Erro ao enviar formulário.');
+        }
+    })
+    .catch(error => {
+        alert('Erro ao enviar formulário. Por favor, tente novamente.');
+        window.location.reload(); // Recarrega a página após erro
+    });
 });
 </script>
