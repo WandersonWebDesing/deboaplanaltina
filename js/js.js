@@ -33,7 +33,7 @@ function handleFormSubmission(event) {
     .then(response => {
         if (response.ok) {
             alert('Formulário enviado com sucesso!');
-            window.location.href = '/pagina-de-agradecimento'; // Redireciona para a página de agradecimento
+            window.location.href = '/'; // Redireciona para a página de agradecimento
         } else {
             throw new Error('Erro ao enviar formulário.');
         }
