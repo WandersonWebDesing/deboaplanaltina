@@ -1,15 +1,13 @@
-// Adiciona a classe "active" para a navegação, dependendo da rolagem da página
-window.addEventListener('scroll', function() {
-    var sections = document.querySelectorAll('section');
-    var links = document.querySelectorAll('.nav-link');
-
-    sections.forEach(function(section, index) {
-        var top = section.offsetTop;
-        var height = section.offsetHeight;
-        var id = section.getAttribute('id');
+// Função para atualizar a navegação com base na rolagem da página
+function updateNavigationOnScroll() {
+    const sections = document.querySelectorAll('section');
+    const links = document.querySelectorAll('.nav-link');
+    
+    sections.forEach((section) => {
+        const { offsetTop: top, offsetHeight: height, id } = section;
 
         if (window.scrollY >= top - 50 && window.scrollY < top + height) {
-            links.forEach(function(link) {
+            links.forEach((link) => {
                 link.classList.remove('active');
                 if (link.getAttribute('href').substring(1) === id) {
                     link.classList.add('active');
@@ -17,12 +15,15 @@ window.addEventListener('scroll', function() {
             });
         }
     });
-});
+}
 
-//contato
-<script>
-document.getElementById('contact-form').addEventListener('submit', function(event) {
+// Adiciona o listener para o evento de scroll
+window.addEventListener('scroll', updateNavigationOnScroll);
+
+// Função para enviar o formulário de contato
+function handleFormSubmission(event) {
     event.preventDefault(); // Evita o envio tradicional
+
     const formData = new FormData(this);
 
     fetch('https://hooks.zapier.com/hooks/catch/XXXXXXXXX/XXXXXX/', {
@@ -32,14 +33,15 @@ document.getElementById('contact-form').addEventListener('submit', function(even
     .then(response => {
         if (response.ok) {
             alert('Formulário enviado com sucesso!');
-            window.location.reload(); // Recarrega a página após sucesso
+            window.location.href = '/pagina-de-agradecimento'; // Redireciona para a página de agradecimento
         } else {
             throw new Error('Erro ao enviar formulário.');
         }
     })
     .catch(error => {
         alert('Erro ao enviar formulário. Por favor, tente novamente.');
-        window.location.reload(); // Recarrega a página após erro
     });
-});
-</script>
+}
+
+// Adiciona o listener para o envio do formulário
+document.getElementById('contact-form').addEventListener('submit', handleFormSubmission);
