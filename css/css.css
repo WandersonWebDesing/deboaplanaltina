@@ -21,49 +21,51 @@ body {
 
 /* === Menu Responsivo, Fino e Transparente com Blur === */
 .navbar {
-  position: fixed;
+  position: sticky;
   top: 0;
-  width: 100%;
-  z-index: 999;
+  z-index: 1000;
   background: rgba(0, 102, 204, 0.85);
-  backdrop-filter: blur(8px);
-  transition: top 0.3s ease-in-out, background 0.3s ease;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  padding: 8px 0;
+  backdrop-filter: blur(10px);
+  padding: 6px 0; /* padding vertical reduzido */
+  height: auto;   /* deixe altura automática */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  line-height: 1.2;
 }
 
-/* Esconde ao rolar */
-.navbar.hidden {
-  top: -100px;
-}
-
-/* Links refinados no menu */
 .navbar-nav .nav-link {
+  padding: 6px 12px;
+  margin: 0 8px;
+  font-size: 0.95rem;
   color: white;
-  padding: 8px 15px;
-  font-weight: 500;
-  transition: all 0.3s ease;
-  font-family: 'Poppins', sans-serif;
-}
-.navbar-nav .nav-link:hover {
-  background-color: #004a99;
-  color: #ffffff;
-  border-radius: 20px;
-}
-.navbar-nav .nav-link.active {
-  background-color: #003366;
-  color: #ffffff;
-  font-weight: bold;
-  border-radius: 20px;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+  cursor: pointer;
 }
 
-/* Botão de menu (mobile) personalizado */
-.navbar-toggler {
-  border: none;
-  background-color: transparent;
+/* Hover: muda a cor do link */
+.navbar-nav .nav-link:hover {
+  color: #ffcc00; /* cor amarela dourada, você pode ajustar */
 }
-.navbar-toggler-icon {
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(0, 102, 204, 1)' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+
+/* Quando o link estiver ativo (seção atual) - brilho */
+.navbar-nav .nav-link.active {
+  color: #ffcc00;
+  text-shadow:
+    0 0 5px #ffcc00,
+    0 0 10px #ffcc00,
+    0 0 15px #ffcc00,
+    0 0 20px #ffcc00;
+  font-weight: bold;
+}
+
+.navbar-brand img {
+  max-height: 90px;
+  width: auto;
+  height: auto;
+}
+
+/* Para evitar que conteúdo fique escondido atrás da navbar fixa */
+body {
+  padding-top: 48px; /* ajustar conforme altura final da navbar */
 }
 
 /* Comportamento Mobile Menu */
@@ -222,6 +224,41 @@ body {
 }
 
 /* === Rodapé === */
+.footer-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #001f3f; /* azul escuro elegante */
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 102, 204, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.footer-logo img {
+  max-width: 200px;
+  height: auto;
+  transition: transform 0.4s ease, filter 0.4s ease;
+  filter: brightness(0.95) drop-shadow(0 0 5px #00aaff);
+}
+
+.footer-logo:hover {
+  transform: scale(1.03);
+  box-shadow: 0 12px 30px rgba(30, 144, 255, 0.5);
+}
+
+.footer-logo:hover img {
+  transform: scale(1.05);
+  filter: brightness(1.1) drop-shadow(0 0 8px #1e90ff);
+}
+
+/* Responsivo para telas pequenas */
+@media (max-width: 768px) {
+  .footer-logo img {
+    max-width: 140px;
+  }
+}
+
 .site-footer {
   background-color: var(--footer-bg);
   color: #fff;
