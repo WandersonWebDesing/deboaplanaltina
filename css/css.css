@@ -1,619 +1,255 @@
- /* Importação das fontes */
- @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Roboto&display=swap');
-
- 
- 
- /* Estilos Gerais */
-body {
-  font-family: 'Roboto', sans-serif;
-  color: rgb(105, 105, 105); /* Texto em Cinza Escuro */
-  background-color: rgb(255, 255, 255); /* Fundo Branco */
-  margin: 0;
-  padding: 0;
+/* === Variáveis e Tema Principal WandersonWeb === */
+:root {
+  --primary-color: #0066cc; /* Azul principal WandersonWeb */
+  --accent-color: #1E90FF;
+  --dark-bg: #1a1a1a;
+  --light-bg: #f5f5f5;
+  --text-color: #333;
+  --section-bg1: #e6f0ff; /* fundo leve azulado */
+  --section-bg2: #ffffff;
+  --section-bg3: #f0f8ff;
+  --footer-bg: #003366;
 }
 
+body {
+  font-family: 'Segoe UI', sans-serif;
+  line-height: 1.6;
+  background-color: var(--light-bg);
+  color: var(--text-color);
+  scroll-behavior: smooth;
+}
 
-/* Estilo para o botão flutuante de WhatsApp */
+/* === Menu Responsivo, Fino e Transparente com Blur === */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  background: rgba(0, 102, 204, 0.85);
+  backdrop-filter: blur(8px);
+  transition: top 0.3s ease-in-out, background 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  padding: 8px 0;
+}
+
+/* Esconde ao rolar */
+.navbar.hidden {
+  top: -100px;
+}
+
+/* Links refinados no menu */
+.navbar-nav .nav-link {
+  color: white;
+  padding: 8px 15px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  font-family: 'Poppins', sans-serif;
+}
+.navbar-nav .nav-link:hover {
+  background-color: #004a99;
+  color: #ffffff;
+  border-radius: 20px;
+}
+.navbar-nav .nav-link.active {
+  background-color: #003366;
+  color: #ffffff;
+  font-weight: bold;
+  border-radius: 20px;
+}
+
+/* Botão de menu (mobile) personalizado */
+.navbar-toggler {
+  border: none;
+  background-color: transparent;
+}
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(0, 102, 204, 1)' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+/* Comportamento Mobile Menu */
+@media (max-width: 768px) {
+  .navbar-nav {
+    background: rgba(0, 102, 204, 0.95);
+    backdrop-filter: blur(6px);
+    text-align: center;
+    padding: 10px 0;
+  }
+  .navbar-nav .nav-link {
+    display: block;
+    margin: 10px auto;
+    font-size: 1.1rem;
+  }
+  .navbar-collapse {
+    padding-top: 10px;
+  }
+}
+
+/* === Seção Hero com Fundo Gradiente === */
+.hero-section {
+  background: linear-gradient(to right, #0066cc, #003366);
+  color: white;
+  padding: 100px 0 60px;
+  text-align: center;
+}
+.hero-title {
+  animation: fadeInDown 1s ease-out;
+}
+
+/* === Botão Personalizado Azul === */
+.btn-primary-custom {
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+.btn-primary-custom:hover {
+  background-color: #004c99;
+}
+
+/* === Títulos das Seções === */
+.section-title {
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: var(--primary-color);
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* === Serviços === */
+#services {
+  background-color: var(--section-bg1);
+  padding: 60px 15px;
+}
+.service-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+.service-icon i {
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin-bottom: 15px;
+}
+
+/* === Galeria === */
+#galeria {
+  padding: 60px 15px;
+  background-color: var(--section-bg2);
+}
+#galeria h2 {
+  color: var(--primary-color);
+}
+.img-thumbnail {
+  border-radius: 10px;
+  transition: transform 0.3s;
+}
+.img-thumbnail:hover {
+  transform: scale(1.03);
+}
+
+/* === Depoimentos / Testemunhos === */
+#testemunhos {
+  background-color: var(--section-bg3);
+  padding: 60px 15px;
+}
+.testimonial-img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid var(--primary-color);
+}
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: var(--primary-color);
+}
+
+/* === Contato === */
+#contato {
+  background: var(--dark-bg);
+  color: white;
+  padding: 60px 15px;
+}
+#contato form {
+  background-color: white;
+  color: black;
+  border: none;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  padding: 30px;
+  border-radius: 10px;
+}
+#contato input,
+#contato textarea {
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
+  width: 100%;
+}
+#contato button {
+  background-color: var(--primary-color);
+  transition: background-color 0.3s;
+  padding: 10px 20px;
+  font-weight: bold;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+#contato button:hover {
+  background-color: #004c99;
+}
+
+/* === Botão Flutuante WhatsApp === */
 .whatsapp-button {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  z-index: 1000;
-  transition: bottom 0.3s ease; /* Suaviza o movimento do botão */
+  z-index: 999;
 }
-
-/* Estilo do link dentro do botão */
-.whatsapp-button a {
+.whatsapp-button .btn {
   display: flex;
   align-items: center;
-  background-color: #25d366;
-  color: white;
-  padding: 10px 15px;
+  gap: 10px;
+  background-color: #25D366;
   border-radius: 50px;
-  text-decoration: none;
-  font-size: 16px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  white-space: nowrap; /* Evita quebra de linha no texto */
-}
-
-/* Efeito de hover */
-.whatsapp-button a:hover {
-  background-color: #128c7e;
-}
-
-/* Ícone do WhatsApp */
-.whatsapp-icon {
-  width: 30px;
-  height: 30px;
-  margin-right: 10px;
-}
-
-/* Ajustes para telas pequenas */
-@media (max-width: 576px) {
-  .whatsapp-button {
-      bottom: 10px;  /* Menor distância do botão da tela */
-      right: 10px;   /* Menor distância da lateral */
-  }
-
-  .whatsapp-button a {
-      padding: 8px 12px;  /* Reduz o padding para telas menores */
-      font-size: 14px;     /* Reduz o tamanho da fonte */
-  }
-
-  .whatsapp-icon {
-      width: 25px;  /* Reduz o tamanho do ícone */
-      height: 25px;
-  }
-}
-
-
-
-
-/* Centralizando os itens do menu */
-.navbar-nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-}
-
-
-
-
-/* Estilo para o logo do menu */
-.navbar-brand {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgb(169,169,169); /* Cor de fundo impactante dentro da paleta */
-    padding: 10px 20px;
-    border-radius: 5px; /* Borda arredondada para destacar a área do logo */
-}
-
-.navbar-brand img {
-    height: 80px; /* Logo maior */
-    width: auto; /* Ajuste automático da largura para manter a proporção */
-}
-
-/* Estilo para os links do menu */
-nav .nav-link {
-    transition: color 0.3s, background-color 0.3s; /* Adicionando a transição para a cor de fundo */
-}
-
-/* Estilo para o item ativo do menu */
-nav .nav-link.active {
-    color: #ffffff; /* Cor do texto para a seção ativa */
-    background-color: #0056b3; /* Cor de fundo para a seção ativa */
-    border-radius: 5px; /* Bordas arredondadas no item ativo */
-    font-weight: bold; /* Destacando o item ativo com negrito */
-}
-
-nav .nav-link:hover {
-    color: #ffffff; /* Cor do texto ao passar o mouse */
-    background-color: #0056b3; /* Cor de fundo ao passar o mouse */
-}
-
-section {
-    padding: 60px 0;
-}
-
-.bg-primary {
-    background-color: #007bff !important; /* Cor principal */
-}
-
-.bg-info {
-    background-color: #17a2b8 !important; /* Cor para a seção de serviços */
-}
-
-.bg-dark {
-    background-color: #343a40 !important; /* Cor para a seção de contato */
-}
-
-/* Estilo para o botão de abrir o menu em dispositivos móveis */
-.navbar-toggler {
-    border-color: #007bff;
-}
-
-.navbar-toggler-icon {
-    background-color: #007bff; /* Cor do ícone do menu */
-}
-
-/* Estilo para o item ativo do menu */
-.navbar-nav .nav-link.active {
-    background-color: #0056b3; /* Cor de fundo para o item ativo */
-    border-radius: 5px; /* Bordas arredondadas */
-    color: #ffffff; /* Cor do texto do item ativo */
-    font-weight: bold; /* Aumenta a ênfase do item ativo */
-}
-
-/* Adicionando o hover para melhorar a interatividade */
-.navbar-nav .nav-link:hover {
-    background-color: #003d6a; /* Cor mais escura no hover */
-    color: #ffffff; /* Mantém o texto branco ao passar o mouse */
-    border-radius: 5px; /* Bordas arredondadas no hover */
-}
-
-/* Ajustes para o item ativo em dispositivos móveis */
-.navbar-nav .nav-link.active,
-.navbar-nav .nav-link:hover {
-    background-color: #0056b3 !important; /* Garante a consistência do hover/ativo */
-    color: #ffffff !important; /* Garante que o texto permaneça branco */
-}
-
-/* Adicionando uma imagem de login no menu */
-.navbar-nav .login-link {
-    display: flex;
-    align-items: center;
-    margin-left: 20px;
-}
-
-.navbar-nav .login-link img {
-    width: 30px; /* Ajuste o tamanho da imagem conforme necessário */
-    cursor: pointer;
-}
-
-.navbar-nav .login-link:hover {
-    opacity: 0.8;
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-    padding-top: 80px; /* Deixar o conteúdo abaixo do menu fixo */
-}
-
-/*Artigos*/
-article {
-  max-width: 900px;
-  margin: 0 auto;
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-
-  padding: 15px;
-}
-/* Estilo básico do cabeçalho */
-.cabecartigo {
-  background-color: #007bff;
-  color: white;
-  text-align: center;
-  padding: 50px 0;
-  position: relative;
-  transition: background-color 0.3s ease-in-out;
-}
-
-/* Efeito de hover no cabeçalho */
-.cabecartigo:hover {
-  background-color: #0056b3;
-}
-
-/* Animação de texto */
-.cabecartigo h1 {
-  font-size: 3rem;
-  margin: 0;
-  opacity: 0;
-  transform: translateY(-50px);
-  animation: fadeInUp 1.5s ease-out forwards;
-}
-
-/* Animação de fade-in e movimento para o topo */
-@keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(50px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Scroll animate - animação ao rolar a página */
-.cabecartigo p {
-  font-size: 1.2rem;
-  opacity: 0;
-  transform: translateY(30px);
-  animation: fadeIn 1.2s ease-out forwards;
-  animation-delay: 0.5s; /* Atraso na animação */
-}
-
-/* Animação de fade-in */
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Efeito de rolagem de imagem */
-.cabecartigo img {
-  max-width: 100%;
-  height: auto;
-  transition: transform 0.3s ease-in-out;
-}
-
-.cabecartigo img:hover {
-  transform: scale(1.1); /* Aumenta a imagem ao passar o mouse */
-}
-
-/* Responsividade para telas menores */
-@media screen and (max-width: 768px) {
-  .cabecartigo h1 {
-    font-size: 2rem;
-  }
-
-  .cabecartigo p {
-    font-size: 1rem;
-  }
-}
-
-
-
-
-
-/*Sobre*/
-.sobre {
-  background-color: #fff;
-  padding: 50px 20px;
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-  object-fit: contain;
-  border-radius: 10px;
-  margin-bottom: 20px;
-}
-
-h1.inicial {
-  font-size: 2.5rem;
-  color: #2c3e50;
-  text-transform: uppercase;
+  padding: 10px 20px;
   font-weight: bold;
-  letter-spacing: 1px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+.whatsapp-icon {
+  height: 30px;
 }
 
-/* Estilo responsivo */
-@media (max-width: 768px) {
-  h1.inicial {
-      font-size: 1.75rem; /* Ajuste para um tamanho mais adequado */
-  }
-}
-
-@media (max-width: 480px) {
-  h1.inicial {
-      font-size: 1.25rem; /* Fonte ainda menor para telas muito pequenas */
-  }
-}
-
-
-
-
-
-
-
-header h1 {
-    text-align: center;
-    color: #0073e6;
-    margin-bottom: 20px;
-}
-
-h2 {
-    margin-bottom: 10px;
-}
-
-section {
-    margin-bottom: 20px;
-}
-
-p {
-    font-size: 1.1em;
-    margin-bottom: 15px;
-    line-height: 1.7;
-    color: #555;
-}
-
-
-
-  
-
-
-
-/*Serviços*/
-.container {
-    padding: 20px;
-    margin: 0 auto;
-    max-width: 1200px;
-  }
-  
-  .section-title {
-    font-size: 2.5rem;
-    color: #007bff; /* Azul vibrante */
-    text-align: center;
-    margin-bottom: 30px;
-    font-weight: bold;
-  }
-  
-  .services-list {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 25px;
-  }
-  
-  .service-item {
-    background: #ffffff; /* Fundo branco para contraste */
-    border: 2px solid #007bff; /* Azul vibrante */
-    border-radius: 10px;
-    padding: 20px;
-    transition: transform 0.3s, box-shadow 0.3s;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  .service-item:hover {
-    transform: translateY(-8px);
-    background: #cce5ff; /* Azul claro */
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
-  }
-  
-  .service-item h3 {
-    color: #0056b3; /* Azul escuro */
-    margin-bottom: 10px;
-    font-size: 1.5rem;
-  }
-  
-  .service-item p {
-    color: #333333; /* Texto em cinza escuro */
-    line-height: 1.6;
-  }
-  
-  .projects-impact h3 {
-    margin-top: 40px;
-    font-size: 1.8rem;
-    color: #007bff; /* Azul vibrante */
-    text-align: center;
-    font-weight: bold;
-  }
-  
-  .projects-impact ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .projects-impact li {
-    margin: 12px 0;
-    padding: 12px;
-    background: #e3f2fd; /* Fundo azul claro */
-    color: #0056b3; /* Texto em azul escuro */
-    border-radius: 8px;
-    border: 1px solid #007bff; /* Azul vibrante */
-    transition: background 0.3s, transform 0.3s;
-  }
-  
-  .projects-impact li:hover {
-    background: #d1ecf1; /* Azul ainda mais claro */
-    transform: translateX(10px);
-  }
-  
-  button {
-    background: #007bff; /* Azul vibrante */
-    color: #ffffff; /* Texto branco */
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background 0.3s, transform 0.3s;
-  }
-  
-  button:hover {
-    background: #0056b3; /* Azul escuro */
-    transform: scale(1.05);
-  }
-
-  
- 
-
-/* Títulos Principais */
-h1 {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    color: rgb(0, 102, 204); /* Azul Principal */
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-/* Títulos de Seção */
-h2 {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    color: rgb(0, 0, 0); /* Preto para Destaque */
-    border-bottom: 2px solid rgb(0, 102, 204); /* Linha Azul */
-    padding-bottom: 10px;
-    margin-top: 40px;
-}
-
-h3 {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    color: rgb(0, 0, 0); /* Preto para Destaque */
-    margin-top: 30px;
-}
-
-/* Parágrafos */
-p {
-    line-height: 1.6;
-    margin-bottom: 15px;
-}
-
-/* Listas */
-ul {
-    list-style-type: disc;
-    margin-left: 20px;
-}
-
-li {
-    margin-bottom: 10px;
-}
-
-/* Destaques */
-strong {
-    color: rgb(0, 153, 76); /* Verde de Inovação */
-}
-
-/* Links */
-a {
-    color: rgb(0, 102, 204); /* Azul Principal */
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-/* Responsividade */
-@media (max-width: 768px) {
-    h1, h2, h3 {
-        text-align: left;
-    }
-
-    .container {
-        padding: 10px;
-    }
-}
-
-
-
-
-
-
-
-
-
-
-  /*formulario*/
-  h2 {
-    color: #FF6347; /* Cor laranja vibrante */
-}
-
-
-/*rodape*/
-/* Estilos do Footer */
-/* Estilo geral para o footer */
+/* === Rodapé === */
 .site-footer {
-    background-color: #282828; /* Cor de fundo escura */
-    color: #fff; /* Cor do texto branca */
-    padding: 40px 20px;
+  background-color: var(--footer-bg);
+  color: #fff;
+  padding: 40px 20px;
+  text-align: center;
+}
+.site-footer .navbar a,
+.footer-social a {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+}
+.footer-copy {
+  margin-top: 15px;
+  font-size: 0.9rem;
+}
+
+/* === Ajustes Mobile Gerais === */
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 60px 20px;
+    text-align: left;
+  }
+  .btn {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .navbar-nav {
     text-align: center;
-    font-family: 'Arial', sans-serif;
   }
-  
-  /* Container do footer */
-  .footer-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  /* Logo do footer */
-  .footer-logo img {
-    width: 120px;
-    margin-bottom: 20px;
-  }
-  
-  /* Links de navegação do footer */
-  .footer-links {
-    margin-bottom: 20px;
-  }
-  
-  .navbar a {
-    color: #00bcd4; /* Cor vibrante azul */
-    margin: 0 15px;
-    text-decoration: none;
-    font-size: 16px;
-    display: inline-block;
-    transition: color 0.3s ease;
-  }
-  
-  .navbar a:hover {
-    color: #ff5722; /* Cor laranja vibrante ao passar o mouse */
-  }
-  
-  .navbar i {
-    margin-right: 8px;
-  }
-  
-  /* Seção de redes sociais */
-  .footer-social a {
-    color: #ff4081; /* Cor vibrante pink */
-    margin: 0 15px;
-    font-size: 18px;
-    text-decoration: none;
-    display: inline-block;
-    transition: color 0.3s ease;
-  }
-  
-  .footer-social a:hover {
-    color: #4caf50; /* Cor vibrante verde ao passar o mouse */
-  }
-  
-  .footer-social i {
-    margin-right: 8px;
-  }
-  
-  /* Texto de direitos autorais */
-  .footer-copy {
-    font-size: 14px;
-    margin-top: 20px;
-    color: #aaa; /* Cor cinza claro para o texto de copyright */
-  }
-  
-  /* Responsividade para telas pequenas */
-  @media (max-width: 768px) {
-    .footer-container {
-      flex-direction: column;
-      padding: 20px;
-    }
-  
-    .navbar {
-      margin-bottom: 20px;
-    }
-  
-    .footer-social {
-      margin-bottom: 20px;
-    }
-  }
-  
-  
+}
