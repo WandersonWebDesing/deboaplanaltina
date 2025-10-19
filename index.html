@@ -1,143 +1,210 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Deboa Planaltina</title>
-        <link rel="icon" href="img/fav/android-chrome-512x512.png" type="image/x-icon">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-        <link href="css/css.css" rel="stylesheet"> <!-- Link para o CSS -->
-        
-        <!-- Bootstrap CSS -->
-         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-         
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>De Boa Planaltina</title>
+  <link rel="icon" href="img/icon/favicon-32x32.png" type="image/png" />
 
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
+  
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
+  
+  <!-- Animações -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  
+  <!-- Estilo próprio -->
+  <link href="css/css.css" rel="stylesheet" />
 
-         <!-- Bootstrap Icons -->
-          <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-          
-          <!-- Start of HubSpot Embed Code -->
-           <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/49042265.js"></script>
-           <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
-           <script>
-           hbspt.forms.create({
-            portalId: "49042265",
-            formId: "418ca612-d749-4013-bbc5-1b586838028e"
-            });
-            </script>
-            
-            
-            <!-- End of HubSpot Embed Code -->
-            
-        </head>
-        
+  <!-- HubSpot -->
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/49042265.js"></script>
+</head>
+
 <body>
-    <header class="main-header">
-        <div class="container">
-            <img src="img/deboalogo.jpg" alt="Logo DE BOA Planaltina-DF" class="logo">
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="#sobre">Sobre</a></li>
-                    <li><a href="#atracoes">Atrações</a></li>
-                    <li><a href="#ingressos">Ingressos</a></li>
-                    <li><a href="#contato">Contato</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+  <header class="main-header bg-dark py-3 shadow-lg" role="banner">
+    <div class="container d-flex align-items-center justify-content-between">
+      <a href="#hero" class="d-flex align-items-center text-decoration-none" aria-label="Voltar para o início">
+        <img src="img/deboalogo.jpg" alt="Logo De Boa Planaltina - Divulgação Cultural" class="logo me-3 rounded-circle" style="height: 60px; width: 60px; object-fit: cover;" />
+        <h1 class="h4 text-white mb-0 fw-bold">De Boa Planaltina</h1>
+      </a>
 
-    <section class="hero-section">
-        <div class="hero-content">
-            <h1>DE BOA Planaltina-DF</h1>
-            <h2>A Vibe Que Você Merece.</h2>
-            <p>Prepare-se para uma experiência inesquecível de alegria, música e muita energia em Planaltina-DF! ✨</p>
-            <a href="#ingressos" class="btn primary-btn">Garanta seu Ingresso!</a>
-        </div>
-    </section>
+      <nav class="main-nav d-none d-md-block" role="navigation">
+        <ul class="nav">
+          <li class="nav-item"><a href="#sobre" class="nav-link text-white">Sobre</a></li>
+          <li class="nav-item"><a href="#quem-somos" class="nav-link text-white">Quem Somos</a></li>
+          <li class="nav-item"><a href="#anuncios" class="nav-link text-white">Anúncios</a></li>
+          <li class="nav-item"><a href="#eventos" class="nav-link text-white">Eventos</a></li>
+          <li class="nav-item"><a href="#contato-social" class="nav-link text-white">Contato</a></li> 
+        </ul>
+      </nav>
+      
+    </div>
+  </header>
 
-    <section id="sobre" class="section about-section">
-        <div class="container">
-            <h3>Sobre o Projeto DE BOA</h3>
-            <p>O "DE BOA Planaltina-DF" nasceu com a missão de transformar suas noites em celebrações épicas. Somos mais do que um evento; somos um movimento que valoriza a diversão, a boa música e a união da galera. Queremos que você se sinta livre, leve e, claro, completamente DE BOA!</p>
-            <p>Nossa proposta é trazer o melhor do entretenimento para a nossa querida Planaltina-DF, com atrações que agitam, um ambiente seguro e uma atmosfera que pulsa alegria. Venha vibrar com a gente!</p>
-        </div>
-    </section>
+  <section id="hero" class="hero-section text-center text-white d-flex align-items-center justify-content-center" style="background: url('img/bg.jpg') center/cover no-repeat; min-height: 90vh;" role="main">
+    <div class="hero-content animate__animated animate__fadeIn p-3 p-md-5 bg-dark bg-opacity-50 rounded-3">
+      <h2 class="display-3 fw-bolder mb-3">DE BOA Planaltina-DF</h2>
+      <p class="h5 mb-4">Seu Ponto de Encontro da **Divulgação Cultural** e **Anúncios Web** na Região!</p>
+      <p class="lead mb-5">Conectando a cultura local, eventos e oportunidades com a comunidade de Planaltina-DF.</p>
+      <a href="#anuncios" class="btn btn-primary btn-lg fw-bold animate__animated animate__pulse animate__infinite">
+        <i class="bi bi-megaphone-fill me-2"></i> Ver Anúncios e Destaques
+      </a>
+    </div>
+  </section>
 
-    <section id="atracoes" class="section attractions-section">
-        <div class="container">
-            <h3>Nossas Atrações</h3>
-            <div class="attraction-grid">
-                <div class="attraction-item">
-                    <h4>DJ Residente: VIBE MIX</h4>
-                    <p>Com os melhores hits que não deixam ninguém parado!</p>
-                </div>
-                <div class="attraction-item">
-                    <h4>Palco Principal: SHOW DE LUZES</h4>
-                    <p>Uma experiência visual incrível que acompanha cada batida!</p>
-                </div>
-                <div class="attraction-item">
-                    <h4>Espaço Gastronômico</h4>
-                    <p>Food trucks com o melhor da culinária local para recarregar as energias.</p>
-                </div>
-                <div class="attraction-item">
-                    <h4>Área VIP Exclusive</h4>
-                    <p>Conforto e atendimento diferenciado para quem busca um extra!</p>
-                </div>
+  <section id="sobre" class="py-5 bg-light" role="complementary">
+    <div class="container">
+      <h3 class="text-center mb-4 border-bottom pb-2">Sobre o Projeto De Boa</h3>
+      <div class="row">
+        <div class="col-lg-10 mx-auto">
+          <p class="text-center lead mb-4">
+            O **De Boa Planaltina-DF** é o principal hub de **divulgação de eventos culturais** e **oportunidades de lazer** da região. Nossa missão é ser o elo entre produtores culturais, comerciantes e o público local.
+          </p>
+          <p class="text-center">
+            Promovemos a cena artística e social, oferecendo um espaço de qualidade para **anúncios web** relevantes e a cobertura completa do que há de melhor em Planaltina-DF.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="quem-somos" class="py-5">
+    <div class="container">
+      <h3 class="text-center mb-5 border-bottom pb-2">Nossa Equipe</h3>
+      <div class="row align-items-center">
+        <div class="col-md-6 mb-4 mb-md-0">
+          <img src="img/equipe.jpg" class="img-fluid rounded-4 shadow-lg" alt="Equipe De Boa Planaltina - Promotores Culturais" loading="lazy">
+        </div>
+        <div class="col-md-6">
+          <p class="lead fw-normal">Somos comunicadores e entusiastas da cultura local. Acreditamos que a informação de qualidade é a chave para o engajamento comunitário.</p>
+          <p>Nossa equipe atua na curadoria, produção de conteúdo e **gestão de anúncios web**, garantindo que as melhores notícias e eventos cheguem até você de forma clara e atraente.</p>
+          <a href="https://wa.me/5561994368262?text=Ol%C3%A1%2C%20gostaria%20de%20conversar%20sobre%20divulga%C3%A7%C3%A3o%20e%20an%C3%BAncios%20no%20De%20Boa%20Planaltina." target="_blank" class="btn btn-success mt-3 fw-bold">
+            <i class="bi bi-whatsapp me-2"></i> Fale com a Equipe
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="anuncios" class="py-5 bg-light" aria-label="Últimos Anúncios e Notícias">
+    <div class="container">
+      <h3 class="text-center mb-5 border-bottom pb-2">Destaques e Anúncios Web</h3>
+      <div class="row">
+        <div class="col-md-4 mb-4">
+          <div class="card h-100 shadow-sm border-0">
+            <img src="img/news1.jpg" class="card-img-top" alt="Anúncio de Novo Destaque Cultural">
+            <div class="card-body">
+              <span class="badge bg-primary mb-2">CULTURA</span>
+              <h5 class="card-title fw-bold">Novo Mural Artístico na Cidade</h5>
+              <p class="card-text">Confira a entrevista com o artista local que transformou um muro em obra de arte!</p>
+              <a href="#" class="btn btn-outline-primary btn-sm stretched-link">Ver Conteúdo</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+          <div class="card h-100 shadow-sm border-0">
+            <img src="img/news2.jpg" class="card-img-top" alt="Anúncio de Evento Gratuito">
+            <div class="card-body">
+              <span class="badge bg-success mb-2">EVENTO</span>
+              <h5 class="card-title fw-bold">Próxima Roda de Samba Gratuita</h5>
+              <p class="card-text">Saiba a data e local da próxima celebração da música popular brasileira.</p>
+              <a href="#" class="btn btn-outline-primary btn-sm stretched-link">Detalhes do Evento</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+          <div class="card h-100 shadow-sm border-0">
+            <img src="img/news3.jpg" class="card-img-top" alt="Novos Parceiros de Divulgação">
+            <div class="card-body">
+              <span class="badge bg-info text-dark mb-2">NEGÓCIOS</span>
+              <h5 class="card-title fw-bold">Anuncie Conosco: Alcance Local</h5>
+              <p class="card-text">Empresas locais se unem. Descubra como divulgar sua marca para milhares de pessoas!</p>
+              <a href="#contato-social" class="btn btn-primary btn-sm stretched-link">Fale com o Time de Anúncios</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="eventos" class="py-5" aria-label="Próximos Eventos Divulgados">
+    <div class="container text-center">
+      <h3 class="mb-5 border-bottom pb-2">Agenda Cultural e Próximos Eventos</h3>
+      <p class="lead mb-5">Confira a lista dos próximos encontros, shows e exibições em Planaltina-DF.</p>
+
+      <div class="row g-4 justify-content-center">
+        <div class="col-md-6 col-lg-4">
+          <div class="card border-0 shadow h-100 p-3 text-start">
+            <div class="card-body">
+              <h4 class="card-title fw-bold text-primary">Feira de Artesanato (20/12)</h4>
+              <p class="text-muted">Espaço Comunitário</p>
+              <p class="card-text">Exposição e venda de produtos locais, música ao vivo e gastronomia.</p>
+              <a href="#" class="btn btn-outline-primary btn-sm mt-2" aria-label="Detalhes da Feira de Artesanato">Ver Mais Detalhes</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="card border-0 shadow h-100 p-3 text-start">
+            <div class="card-body">
+              <h4 class="card-title fw-bold text-primary">Lançamento de Livro (05/01)</h4>
+              <p class="text-muted">Biblioteca Pública</p>
+              <p class="card-text">Sessão de autógrafos com o autor e bate-papo sobre literatura regional.</p>
+              <a href="#" class="btn btn-outline-primary btn-sm mt-2" aria-label="Detalhes do Lançamento de Livro">Ver Mais Detalhes</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-12 mt-5">
+            <div class="alert alert-primary p-4 shadow-sm" role="alert">
+                <h4 class="alert-heading">Quer Divulgar Seu Evento ou Anúncio?</h4>
+                <p>O **De Boa Planaltina** é a plataforma ideal para dar visibilidade à sua iniciativa cultural, artística ou comercial.</p>
+                <hr>
+                <a href="https://wa.me/5561994368262?text=Ol%C3%A1%2C%20gostaria%20de%20anunciar%20um%20evento%20no%20De%20Boa%20Planaltina." target="_blank" class="btn btn-success btn-lg fw-bold"><i class="bi bi-whatsapp me-2"></i> ANUNCIE CONOSCO VIA WHATSAPP!</a>
             </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <section id="ingressos" class="section tickets-section">
-        <div class="container">
-            <h3>Garanta seu Ingresso!</h3>
-            <p class="highlight-text">Não perca o DE BOA Planaltina-DF! Os ingressos são limitados.</p>
-            <div class="ticket-options">
-                <div class="ticket-card">
-                    <h4>Ingresso Pista</h4>
-                    <p>Acesso total à pista de dança e atrações principais.</p>
-                    <span class="price">R$ 50,00</span>
-                    <a href="#" class="btn secondary-btn">Comprar Agora</a>
-                </div>
-                <div class="ticket-card featured">
-                    <h4>Ingresso VIP</h4>
-                    <p>Acesso à área VIP exclusiva, bar e banheiros separados.</p>
-                    <span class="price">R$ 120,00</span>
-                    <a href="#" class="btn primary-btn">Comprar Agora</a>
-                </div>
-                <div class="ticket-card">
-                    <h4>Lote Promocional</h4>
-                    <p>Edição limitada com desconto especial para os primeiros!</p>
-                    <span class="price">R$ 35,00</span>
-                    <a href="#" class="btn secondary-btn">Comprar Agora</a>
-                </div>
-            </div>
-            <p class="small-text">*Vendas online e em pontos de venda autorizados.</p>
-        </div>
-    </section>
+  <section id="contato-social" class="py-5 bg-light" role="form">
+    <div class="container text-center">
+      <h3 class="mb-4 border-bottom pb-2">Entre em Contato Conosco</h3>
+      <p class="lead mb-4">Para anunciar, sugerir pautas ou falar com a equipe, utilize o nosso WhatsApp ou nossas redes sociais.</p>
+      
+      <div class="row justify-content-center">
+          <div class="col-md-6">
+              <a href="https://wa.me/5561994368262?text=Ol%C3%A1%2C%20vim%20do%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." target="_blank" class="btn btn-success btn-lg w-100 mb-3 fw-bold">
+                  <i class="bi bi-whatsapp me-2"></i> Falar Agora pelo WhatsApp
+              </a>
+          </div>
+      </div>
 
-    <section id="contato" class="section contact-section">
-        <div class="container">
-            <h3>Fale Conosco</h3>
-            <p>Tem dúvidas ou quer saber mais? Entre em contato!</p>
-            <form class="contact-form">
-                <input type="text" placeholder="Seu Nome">
-                <input type="email" placeholder="Seu Email">
-                <textarea placeholder="Sua Mensagem"></textarea>
-                <button type="submit" class="btn primary-btn">Enviar Mensagem</button>
-            </form>
-            <div class="social-media">
-                <p>Siga-nos nas redes sociais:</p>
-                <a href="https://instagram.com/deboaplanaltina" target="_blank">Instagram</a>
-                <a href="https://facebook.com/deboaplanaltina" target="_blank">Facebook</a>
-            </div>
-        </div>
-    </section>
+      <div class="text-center mt-4">
+        <p class="lead">Siga-nos nas redes:</p>
+        <a href="https://instagram.com/deboaplanaltina" target="_blank" class="me-4 text-dark" aria-label="Instagram De Boa Planaltina"><i class="bi bi-instagram display-5"></i></a>
+        <a href="https://facebook.com/deboaplanaltina" target="_blank" class="text-dark" aria-label="Facebook De Boa Planaltina"><i class="bi bi-facebook display-5"></i></a>
+      </div>
+    </div>
+  </section>
 
-    <footer class="main-footer">
-        <div class="container">
-            <p>&copy; 2023 DE BOA Planaltina-DF. Todos os direitos reservados.</p>
-        </div>
-    </footer>
+  <footer class="main-footer bg-dark text-white py-3" role="contentinfo">
+    <div class="container text-center">
+      <p class="mb-0 small">&copy; 2025 De Boa Planaltina-DF — Todos os direitos reservados. | Foco em Divulgação Cultural e Anúncios Web.</p>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/5561994368262?text=Ol%C3%A1%2C%20vim%20do%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." 
+     class="whatsapp-float animate__animated animate__bounceIn" 
+     target="_blank" 
+     aria-label="Fale Conosco pelo WhatsApp">
+    <i class="bi bi-whatsapp"></i>
+  </a>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" defer></script>
 </body>
 </html>
