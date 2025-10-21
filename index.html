@@ -1,210 +1,228 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>De Boa Planaltina</title>
-  <link rel="icon" href="img/icon/favicon-32x32.png" type="image/png" />
-
-  <!-- Bootstrap 5 -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
-  
-  <!-- Bootstrap Icons -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
-  
-  <!-- Animações -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-  
-  <!-- Estilo próprio -->
-  <link href="css/css.css" rel="stylesheet" />
-
-  <!-- HubSpot -->
-  <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/49042265.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>De Boa Planaltina | Seu Guia Completo de Notícias, Turismo e Eventos</title>
+    
+    <link rel="stylesheet" href="css/css.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;800&display=swap" rel="stylesheet">
 </head>
-
 <body>
-  <header class="main-header bg-dark py-3 shadow-lg" role="banner">
-    <div class="container d-flex align-items-center justify-content-between">
-      <a href="#hero" class="d-flex align-items-center text-decoration-none" aria-label="Voltar para o início">
-        <img src="img/deboalogo.jpg" alt="Logo De Boa Planaltina - Divulgação Cultural" class="logo me-3 rounded-circle" style="height: 60px; width: 60px; object-fit: cover;" />
-        <h1 class="h4 text-white mb-0 fw-bold">De Boa Planaltina</h1>
-      </a>
 
-      <nav class="main-nav d-none d-md-block" role="navigation">
-        <ul class="nav">
-          <li class="nav-item"><a href="#sobre" class="nav-link text-white">Sobre</a></li>
-          <li class="nav-item"><a href="#quem-somos" class="nav-link text-white">Quem Somos</a></li>
-          <li class="nav-item"><a href="#anuncios" class="nav-link text-white">Anúncios</a></li>
-          <li class="nav-item"><a href="#eventos" class="nav-link text-white">Eventos</a></li>
-          <li class="nav-item"><a href="#contato-social" class="nav-link text-white">Contato</a></li> 
-        </ul>
-      </nav>
-      
+    <!-- Botões Flutuantes Redes Sociais -->
+    <div id="floating-buttons">
+        <a href="https://api.whatsapp.com/send?phone=5561994368262" target="_blank" class="whatsapp-btn" aria-label="WhatsApp De Boa Planaltina">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M380.9 97.1C339.2 55.4 283.9 32 225.5 32c-122.9 0-222.8 99.8-222.9 222.9 0 39.1 10.3 77.1 29.8 111L0 480l114.9-35.4c31.4 18.2 67.9 27.8 104.5 27.8 123 0 222.9-99.9 222.9-223.1 0-57.5-22.3-112.2-61.1-151zM225.5 448c-30 0-58.4-7.8-83.3-22.7l-5.6-3.3-60.5 18.6 18.9-59.5-3.3-5.6c-14.9-24.9-22.8-53.3-22.8-83.3 0-101.4 82.3-183.7 183.7-183.7 49.3 0 95.8 19.3 130.6 54.1 34.8 34.8 54.1 81.3 54.1 130.6 0 101.4-82.3 183.7-183.7 183.7zM348.2 267.5c-3.3-1.8-19.5-9.6-22.5-10.7-3-1-5.4-1.5-7.7 1.5-2.3 3-8.8 10.7-10.7 12.8-1.9 2.1-3.8 2.3-7 1.1s-13.3-4.9-25.2-15.6c-9.3-8.2-15.6-18.4-17.5-21.6-1.9-3.2-.2-4.9 1.4-6.4 1.2-1.2 2.7-3 4.6-5.1s.7-3.9-.3-5.5c-1-1.6-9.6-23.1-13.1-31.5-3.5-8.4-7.1-7.2-9.7-7.2-2.6 0-5.5-.3-8.5-.3s-7.8 1.1-11.8 5.4c-4 4.3-15.3 14.9-15.3 36.4 0 21.5 15.7 42.1 17.9 45.1 2.2 3 30.7 49.9 74.8 68.3 10.7 4.6 19 7.3 25.5 9.3 17.7 5.7 33.9 5.8 46.4 4.8 13.9-1.2 32.1-13.9 36.6-27.4 4.6-13.5 4.6-25 3.2-27.4-1.4-2.4-5.2-3.8-11-6.7z"/></svg>
+        </a>
+        <a href="https://instagram.com/deboaplanaltina" target="_blank" class="social-btn instagram-btn" aria-label="Instagram De Boa Planaltina">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M224.1 15.8c-26.7 0-46.7 5.7-65.7 15.5-19 9.8-34.9 23.3-47.6 40.5-12.8 17.1-19.1 37.6-19.1 61.4V365.2c0 23.8 6.3 44.3 19.1 61.4 12.8 17.2 28.7 30.7 47.6 40.5 19 9.8 39 15.5 65.7 15.5H383.9c26.7 0 46.7-5.7 65.7-15.5 19-9.8 34.9-23.3 47.6-40.5 12.8-17.1 19.1-37.6 19.1-61.4V113.2c0-23.8-6.3-44.3-19.1-61.4-12.8-17.2-28.7-30.7-47.6-40.5-19-9.8-39-15.5-65.7-15.5H224.1zm-1.6 127.3c-48.4 0-87.8 39.4-87.8 87.8s39.4 87.8 87.8 87.8 87.8-39.4 87.8-87.8-39.4-87.8-87.8-87.8zm145.4-80.6c-9.6 0-17.4-7.8-17.4-17.4s7.8-17.4 17.4-17.4 17.4 7.8 17.4 17.4-7.8 17.4-17.4 17.4zm-145.4 49.3c35.9 0 65.1 29.2 65.1 65.1s-29.2 65.1-65.1 65.1-65.1-29.2-65.1-65.1 29.2-65.1 65.1-65.1z"/></svg>
+        </a>
+        <a href="https://youtube.com/deboaplanaltina" target="_blank" class="social-btn youtube-btn" aria-label="YouTube De Boa Planaltina">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M549.65 138.28c-2.4-7.2-9.7-14.7-17.8-19.7C485.9 94.62 401.7 82 288 82s-197.9 12.62-243.8 36.5c-8.1 5-15.4 12.5-17.8 19.7-2.4 7.2-3.6 17.7-3.6 30.5V343.2c0 12.8 1.2 23.3 3.6 30.5 2.4 7.2 9.7 14.7 17.8 19.7 45.9 23.9 130.1 36.5 243.8 36.5s197.9-12.62 243.8-36.5c8.1-5 15.4-12.5 17.8-19.7 2.4-7.2 3.6-17.7 3.6-30.5V168.78c0-12.8-1.2-23.3-3.6-30.5zM226.7 361.34V150.66l135.5 105.34-135.5 105.34z"/></svg>
+        </a>
     </div>
-  </header>
 
-  <section id="hero" class="hero-section text-center text-white d-flex align-items-center justify-content-center" style="background: url('img/bg.jpg') center/cover no-repeat; min-height: 90vh;" role="main">
-    <div class="hero-content animate__animated animate__fadeIn p-3 p-md-5 bg-dark bg-opacity-50 rounded-3">
-      <h2 class="display-3 fw-bolder mb-3">DE BOA Planaltina-DF</h2>
-      <p class="h5 mb-4">Seu Ponto de Encontro da **Divulgação Cultural** e **Anúncios Web** na Região!</p>
-      <p class="lead mb-5">Conectando a cultura local, eventos e oportunidades com a comunidade de Planaltina-DF.</p>
-      <a href="#anuncios" class="btn btn-primary btn-lg fw-bold animate__animated animate__pulse animate__infinite">
-        <i class="bi bi-megaphone-fill me-2"></i> Ver Anúncios e Destaques
-      </a>
-    </div>
-  </section>
+    <!-- Header -->
+    <header id="main-header">
+        <div class="container header-content">
+            <div id="logo-container">
+                <img src="img/deboalogo.jpg" alt="DE BOA Planaltina-DF Logo" id="site-logo">
+                <span id="site-name">De Boa Planaltina</span>
+            </div>
+            <button id="menu-toggle" aria-expanded="false" aria-controls="main-nav">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
 
-  <section id="sobre" class="py-5 bg-light" role="complementary">
+        <!-- Menu de navegação -->
+        <nav id="main-nav" class="hidden">
+            <a href="#home">Home</a>
+            <a href="#sobre">De Boa e Você</a>
+            <a href="#turismo">Turismo</a>
+            <a href="#noticias">Notícias e Eventos</a>
+            <a href="#turismo-locais">O que fazer em Planaltina</a>
+            <a href="#parceiros">Parceiros</a>
+        </nav>
+    </header>
+
+    <!-- Barra de busca -->
+    <section id="search-bar">
     <div class="container">
-      <h3 class="text-center mb-4 border-bottom pb-2">Sobre o Projeto De Boa</h3>
-      <div class="row">
-        <div class="col-lg-10 mx-auto">
-          <p class="text-center lead mb-4">
-            O **De Boa Planaltina-DF** é o principal hub de **divulgação de eventos culturais** e **oportunidades de lazer** da região. Nossa missão é ser o elo entre produtores culturais, comerciantes e o público local.
-          </p>
-          <p class="text-center">
-            Promovemos a cena artística e social, oferecendo um espaço de qualidade para **anúncios web** relevantes e a cobertura completa do que há de melhor em Planaltina-DF.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
+        <!-- Título mais persuasivo -->
+        <h2 id="search-title">Tá De Boa? Explore o melhor de Planaltina!</h2>
+        <p id="search-subtitle">Encontre anúncios, eventos, pontos turísticos e muito mais com apenas um clique.</p>
 
-  <section id="quem-somos" class="py-5">
-    <div class="container">
-      <h3 class="text-center mb-5 border-bottom pb-2">Nossa Equipe</h3>
-      <div class="row align-items-center">
-        <div class="col-md-6 mb-4 mb-md-0">
-          <img src="img/equipe.jpg" class="img-fluid rounded-4 shadow-lg" alt="Equipe De Boa Planaltina - Promotores Culturais" loading="lazy">
-        </div>
-        <div class="col-md-6">
-          <p class="lead fw-normal">Somos comunicadores e entusiastas da cultura local. Acreditamos que a informação de qualidade é a chave para o engajamento comunitário.</p>
-          <p>Nossa equipe atua na curadoria, produção de conteúdo e **gestão de anúncios web**, garantindo que as melhores notícias e eventos cheguem até você de forma clara e atraente.</p>
-          <a href="https://wa.me/5561994368262?text=Ol%C3%A1%2C%20gostaria%20de%20conversar%20sobre%20divulga%C3%A7%C3%A3o%20e%20an%C3%BAncios%20no%20De%20Boa%20Planaltina." target="_blank" class="btn btn-success mt-3 fw-bold">
-            <i class="bi bi-whatsapp me-2"></i> Fale com a Equipe
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="anuncios" class="py-5 bg-light" aria-label="Últimos Anúncios e Notícias">
-    <div class="container">
-      <h3 class="text-center mb-5 border-bottom pb-2">Destaques e Anúncios Web</h3>
-      <div class="row">
-        <div class="col-md-4 mb-4">
-          <div class="card h-100 shadow-sm border-0">
-            <img src="img/news1.jpg" class="card-img-top" alt="Anúncio de Novo Destaque Cultural">
-            <div class="card-body">
-              <span class="badge bg-primary mb-2">CULTURA</span>
-              <h5 class="card-title fw-bold">Novo Mural Artístico na Cidade</h5>
-              <p class="card-text">Confira a entrevista com o artista local que transformou um muro em obra de arte!</p>
-              <a href="#" class="btn btn-outline-primary btn-sm stretched-link">Ver Conteúdo</a>
+        <!-- Formulário de busca estilizado -->
+        <form action="#" method="get" id="search-form">
+            <div class="search-wrapper">
+                <input type="search" name="query" placeholder="Digite aqui o que você procura..." aria-label="Busca no site" required>
+                <button type="submit" aria-label="Pesquisar">
+                    🔍 Buscar
+                </button>
             </div>
-          </div>
-        </div>
-
-        <div class="col-md-4 mb-4">
-          <div class="card h-100 shadow-sm border-0">
-            <img src="img/news2.jpg" class="card-img-top" alt="Anúncio de Evento Gratuito">
-            <div class="card-body">
-              <span class="badge bg-success mb-2">EVENTO</span>
-              <h5 class="card-title fw-bold">Próxima Roda de Samba Gratuita</h5>
-              <p class="card-text">Saiba a data e local da próxima celebração da música popular brasileira.</p>
-              <a href="#" class="btn btn-outline-primary btn-sm stretched-link">Detalhes do Evento</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-4 mb-4">
-          <div class="card h-100 shadow-sm border-0">
-            <img src="img/news3.jpg" class="card-img-top" alt="Novos Parceiros de Divulgação">
-            <div class="card-body">
-              <span class="badge bg-info text-dark mb-2">NEGÓCIOS</span>
-              <h5 class="card-title fw-bold">Anuncie Conosco: Alcance Local</h5>
-              <p class="card-text">Empresas locais se unem. Descubra como divulgar sua marca para milhares de pessoas!</p>
-              <a href="#contato-social" class="btn btn-primary btn-sm stretched-link">Fale com o Time de Anúncios</a>
-            </div>
-          </div>
-        </div>
-      </div>
+        </form>
     </div>
-  </section>
+</section>
 
-  <section id="eventos" class="py-5" aria-label="Próximos Eventos Divulgados">
-    <div class="container text-center">
-      <h3 class="mb-5 border-bottom pb-2">Agenda Cultural e Próximos Eventos</h3>
-      <p class="lead mb-5">Confira a lista dos próximos encontros, shows e exibições em Planaltina-DF.</p>
 
-      <div class="row g-4 justify-content-center">
-        <div class="col-md-6 col-lg-4">
-          <div class="card border-0 shadow h-100 p-3 text-start">
-            <div class="card-body">
-              <h4 class="card-title fw-bold text-primary">Feira de Artesanato (20/12)</h4>
-              <p class="text-muted">Espaço Comunitário</p>
-              <p class="card-text">Exposição e venda de produtos locais, música ao vivo e gastronomia.</p>
-              <a href="#" class="btn btn-outline-primary btn-sm mt-2" aria-label="Detalhes da Feira de Artesanato">Ver Mais Detalhes</a>
+    <!-- Main content -->
+    <main class="container">
+
+        <!-- Home -->
+        <section id="home" class="content-block">
+            <h2>Bem-vindo à De Boa Planaltina</h2>
+            <p>Seu portal completo de informações sobre a cidade mais antiga do Distrito Federal. Encontre notícias, os melhores pontos turísticos e as oportunidades de negócio que impulsionam o desenvolvimento local.</p>
+            <div class="cta-grid">
+                <a href="#turismo" class="cta-button large-cta">Explorar Turismo</a>
+                <a href="#parceiros" class="cta-button large-cta primary-cta">Anuncie Conosco</a>
             </div>
-          </div>
-        </div>
+        </section>
 
-        <div class="col-md-6 col-lg-4">
-          <div class="card border-0 shadow h-100 p-3 text-start">
-            <div class="card-body">
-              <h4 class="card-title fw-bold text-primary">Lançamento de Livro (05/01)</h4>
-              <p class="text-muted">Biblioteca Pública</p>
-              <p class="card-text">Sessão de autógrafos com o autor e bate-papo sobre literatura regional.</p>
-              <a href="#" class="btn btn-outline-primary btn-sm mt-2" aria-label="Detalhes do Lançamento de Livro">Ver Mais Detalhes</a>
+        <!-- Sobre -->
+        <section id="sobre" class="content-block">
+            <h2>De Boa e Você: Nossa Missão</h2>
+            <p><strong>Deboa Planaltina</strong> é uma página cultural e jornalística que há 3 anos valoriza as histórias, talentos e o comércio local. Nosso propósito é fortalecer a identidade cultural de Planaltina e região, dando voz a quem faz a diferença e impulsionando o desenvolvimento local.</p>
+        </section>
+
+        <!-- Parceiros -->
+        <section id="parceiros" class="content-block highlight-section">
+            <h2>Seja um Parceiro De Boa Planaltina</h2>
+            <p>Dê visibilidade máxima ao seu negócio. Atinja milhares de clientes potenciais na região e fortaleça a sua marca.</p>
+            <div class="plans-grid">
+                <div class="plan-card"><h3>Plano Destaque</h3></div>
+                <div class="plan-card featured-plan"><h3>Plano Patrocinador</h3></div>
+                <div class="plan-card"><h3>Plano Eventos</h3></div>
             </div>
-          </div>
-        </div>
-        
-        <div class="col-12 mt-5">
-            <div class="alert alert-primary p-4 shadow-sm" role="alert">
-                <h4 class="alert-heading">Quer Divulgar Seu Evento ou Anúncio?</h4>
-                <p>O **De Boa Planaltina** é a plataforma ideal para dar visibilidade à sua iniciativa cultural, artística ou comercial.</p>
-                <hr>
-                <a href="https://wa.me/5561994368262?text=Ol%C3%A1%2C%20gostaria%20de%20anunciar%20um%20evento%20no%20De%20Boa%20Planaltina." target="_blank" class="btn btn-success btn-lg fw-bold"><i class="bi bi-whatsapp me-2"></i> ANUNCIE CONOSCO VIA WHATSAPP!</a>
+            <a href="https://api.whatsapp.com/send?phone=5561994368262&text=Olá!%20Quero%20saber%20mais%20sobre%20como%20me%20tornar%20parceiro%20do%20Deboa%20Planaltina." target="_blank" class="cta-button large-cta">
+                Fale Conosco e Anuncie (61) 99436-8262
+            </a>
+        </section>
+
+        <!-- Notícias -->
+        <section id="noticias" class="content-block">
+            <h2>Notícias e Eventos Importantes</h2>
+
+            <!-- Notícia 1 -->
+            <article class="news-card">
+                <img src="img/plashop.png" alt="Planaltina Shopping" class="news-image">
+                <div class="news-text">
+                    <h3>PLANALTINA SHOPPING: Obras Começam em Junho de 2025</h3>
+                    <p>A PaulOOctavio anunciou a construção do Planaltina Shopping, mantendo uma tradição de celebrar o aniversário da cidade com obras que beneficiam o DF, gerando emprego e renda. 
+                    O empreendimento será erguido na esquina da Avenida Goiás com a DF-128. Terá 146 lojas, cinco cinemas, área de eventos e praça de alimentação, totalizando 83.983,45 m², com 1.273 vagas de estacionamento.</p>
+                    <a href="#">Ver Detalhes do Projeto</a>
+                </div>
+            </article>
+
+            <!-- Notícia 2 -->
+            <article class="news-card">
+                <img src="img/via.png" alt="BR-020 Obras" class="news-image">
+                <div class="news-text">
+                    <h3>GDF Investe R$ 90 Milhões na BR-020: 3ª Faixa e Viaduto</h3>
+                    <p>A BR-020 liga Sobradinho, Sobradinho II, Planaltina, Arapoanga, Planaltina de Goiás e Formosa ao Plano Piloto. Nesta primeira fase serão executados 8,6 km no sentido Sobradinho/Planaltina e 5,7 km no sentido contrário, gerando cerca de 130 empregos. A rodovia é uma das mais perigosas do DF, reforçando a necessidade das intervenções.</p>
+                    <a href="#">Saiba Mais sobre as Obras</a>
+                </div>
+            </article>
+
+            <!-- Notícia 3 -->
+            <article class="news-card">
+                <img src="img/viadulto.png" alt="Viaduto Planaltina" class="news-image">
+                <div class="news-text">
+                    <h3>Construção de Viaduto na Entrada de Planaltina (R$ 45,5 milhões)</h3>
+                    <p>O governador Ibaneis Rocha autorizou a construção de um viaduto na entrada de Planaltina. A obra será executada pelo DER-DF e beneficiará cerca de 90 mil motoristas diariamente. Inclui terraplenagem, pavimentação, sinalização, acessibilidade e ciclovia.</p>
+                    <a href="#">Leia o Anúncio Oficial</a>
+                </div>
+            </article>
+
+            <!-- Evento -->
+            <article class="news-card event-card">
+                <img src="img/sacra3.png" alt="Via Sacra Morro da Capelinha" class="news-image">
+                <div class="news-text">
+                    <h3>Via Sacra do Morro da Capelinha</h3>
+                    <p>Consagrado como uma das maiores produções católicas do DF, é um evento cultural religioso celebrado numa peça teatral, relembrando a história de Jesus Cristo. Considerado patrimônio cultural imaterial desde 2008, atrai público de toda a região.</p>
+                    <a href="#morro-capelinha">Ver História Completa</a>
+                </div>
+            </article>
+        </section>
+
+        <!-- Turismo -->
+        <section id="turismo" class="content-block">
+            <h2>Turismo: Os Tesouros de Planaltina</h2>
+            <p>Explore a rica história, espiritualidade e natureza da cidade. Descubra o que fazer em Planaltina.</p>
+
+            <!-- Navegação interna -->
+            <div class="content-navigation" id="turismo-locais">
+                <a href="#museu-historico">Museu Histórico</a>
+                <a href="#pedra-fundamental">Pedra Fundamental</a>
+                <a href="#morro-capelinha">Morro da Capelinha</a>
+                <a href="#aguas-emendadas">Águas Emendadas</a>
+                <a href="#vale-amanhecer">Vale do Amanhecer</a>
             </div>
+
+            <!-- Turismo Detalhes -->
+            <article id="museu-historico" class="tourism-detail">
+                <h3>Museu Histórico e Artístico de Planaltina</h3>
+                <img src="img/museu.png" alt="Museu Histórico de Planaltina" class="tourism-img">
+                <p>O Museu Histórico e Artístico de Planaltina é um museu brasileiro, construído entre os séculos XIX e XX e inaugurado em 1974. Patrimônio Histórico Nacional desde 1987.</p>
+                <h4>Localização e Horário</h4>
+                <p>Setor Tradicional, quadra 57. Quarta a domingo, 08:00-12:00 e 14:00-18:00.</p>
+                <h4>História</h4>
+                <p>O casarão colonial de Afonso Coelho da Silva Campos simboliza a influência histórica da família Guimarães na região. Passou a ser Museu em 1973, resgatando a identidade cultural de Planaltina.</p>
+                <h4>Acervo e Conservação</h4>
+                <p>O acervo inclui mobiliário antigo, fotografias, o primeiro telefone de Planaltina e o piano alemão de 1925. Passou por reformas e reabriu em 2017, mantendo a conservação do patrimônio.</p>
+            </article>
+
+            <article id="pedra-fundamental" class="tourism-detail">
+                <h3>Pedra Fundamental de Brasília</h3>
+                <img src="img/pedra.png" alt="Pedra Fundamental de Brasília" class="tourism-img">
+                <p>Obelisco construído em 1922, no Morro do Centenário, marcando a fundação de Brasília, a 10 km de Planaltina.</p>
+                <h4>História e Missão Cruls</h4>
+                <p>Expedições iniciadas após a Constituição de 1891 demarcaram a área. A pedra foi assentada pelo presidente Epitácio Pessoa em 7 de setembro de 1922.</p>
+                <h4>Descrição do Obelisco</h4>
+                <p>Forma piramidal de base quadrada, 3,75 m de altura, orientada pelos pontos cardeais. Placa comemorativa registra o assentamento da Pedra Fundamental.</p>
+            </article>
+
+            <article id="morro-capelinha" class="tourism-detail">
+                <h3>Via Sacra do Morro da Capelinha</h3>
+                <img src="img/sacra1.png" alt="Morro da Capelinha" class="tourism-img">
+                <p>Evento cultural religioso brasileiro, realizado desde 1973, com aproximadamente 1.400 voluntários. Patrimônio Cultural Imaterial desde 2008.</p>
+                <h4>História e Significado</h4>
+                <p>Encena a vida de Jesus Cristo, do julgamento à ressurreição, atraindo público de todo o DF e outras regiões.</p>
+            </article>
+
+            <article id="aguas-emendadas" class="tourism-detail">
+                <h3>Estação Ecológica de Águas Emendadas</h3>
+                <img src="img/aguas.png" alt="Estação Ecológica Águas Emendadas" class="tourism-img">
+                <p>Unidade de conservação com 10.547 hectares, próxima a Planaltina, protegendo fauna e flora, reconhecida pela UNESCO.</p>
+                <h4>Fenômeno Hidrográfico</h4>
+                <p>Águas fluem para duas bacias distintas: Rio Tocantins (Norte) e Rio da Prata (Sul).</p>
+                <h4>Flora e Fauna</h4>
+                <p>Vegetação diversa: cerrado, veredas, mata de galeria. Fauna inclui lobo-guará, veado-campeiro, tamanduá-bandeira, tatu-canastra e aves raras.</p>
+            </article>
+
+            <article id="vale-amanhecer" class="tourism-detail">
+                <h3>Vale do Amanhecer</h3>
+                <img src="img/vale.png" alt="Vale do Amanhecer" class="tourism-img">
+                <p>Maior comunidade espírita do DF, fundada por Neiva Chaves Zelaya ("Tia Neiva") em 1969.</p>
+                <h4>A Doutrina</h4>
+                <p>Espiritualista cristã, baseada nos princípios crísticos e na reencarnação. Mais de 600 templos no Brasil e exterior.</p>
+                <h4>História e Fundação</h4>
+                <p>Neiva iniciou sua peregrinação aos 33 anos e fundou o Vale do Amanhecer em 1969. Governado por um conselho de mestres chamados "Trinos Presidente Triada".</p>
+            </article>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>Domínio: deboaplanaltina.com.br &copy; 2024 DE BOA Planaltina-DF. Todos os direitos reservados.</p>
+        <div class="footer-links">
+            <a href="https://instagram.com/deboaplanaltina" target="_blank">Instagram</a>
+            <a href="https://youtube.com/deboaplanaltina" target="_blank">YouTube</a>
         </div>
-      </div>
-    </div>
-  </section>
+    </footer>
 
-  <section id="contato-social" class="py-5 bg-light" role="form">
-    <div class="container text-center">
-      <h3 class="mb-4 border-bottom pb-2">Entre em Contato Conosco</h3>
-      <p class="lead mb-4">Para anunciar, sugerir pautas ou falar com a equipe, utilize o nosso WhatsApp ou nossas redes sociais.</p>
-      
-      <div class="row justify-content-center">
-          <div class="col-md-6">
-              <a href="https://wa.me/5561994368262?text=Ol%C3%A1%2C%20vim%20do%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." target="_blank" class="btn btn-success btn-lg w-100 mb-3 fw-bold">
-                  <i class="bi bi-whatsapp me-2"></i> Falar Agora pelo WhatsApp
-              </a>
-          </div>
-      </div>
-
-      <div class="text-center mt-4">
-        <p class="lead">Siga-nos nas redes:</p>
-        <a href="https://instagram.com/deboaplanaltina" target="_blank" class="me-4 text-dark" aria-label="Instagram De Boa Planaltina"><i class="bi bi-instagram display-5"></i></a>
-        <a href="https://facebook.com/deboaplanaltina" target="_blank" class="text-dark" aria-label="Facebook De Boa Planaltina"><i class="bi bi-facebook display-5"></i></a>
-      </div>
-    </div>
-  </section>
-
-  <footer class="main-footer bg-dark text-white py-3" role="contentinfo">
-    <div class="container text-center">
-      <p class="mb-0 small">&copy; 2025 De Boa Planaltina-DF — Todos os direitos reservados. | Foco em Divulgação Cultural e Anúncios Web.</p>
-    </div>
-  </footer>
-
-  <a href="https://wa.me/5561994368262?text=Ol%C3%A1%2C%20vim%20do%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." 
-     class="whatsapp-float animate__animated animate__bounceIn" 
-     target="_blank" 
-     aria-label="Fale Conosco pelo WhatsApp">
-    <i class="bi bi-whatsapp"></i>
-  </a>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" defer></script>
+    <script src="js/js.js"></script>
 </body>
 </html>

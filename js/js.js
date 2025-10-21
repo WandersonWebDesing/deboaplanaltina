@@ -1,52 +1,52 @@
-// Atualiza a navegação com base na rolagem da página
-function updateNavigationOnScroll() {
-  const sections = document.querySelectorAll('section');
-  const links = document.querySelectorAll('.nav-link');
+document.addEventListener('DOMContentLoaded', () => {
+    const sidebar = document.getElementById('sidebar');
+    const menuBtn = document.getElementById('menu-btn');
+    const closeBtn = document.getElementById('close-btn');
 
-  sections.forEach((section) => {
-    const { offsetTop: top, offsetHeight: height, id } = section;
+    if (!sidebar || !menuBtn) return; // interrompe se não existir
 
-    if (window.scrollY >= top - 80 && window.scrollY < top + height) {
-      links.forEach((link) => {
-        link.classList.remove('active');
-        if (link.getAttribute('href').substring(1) === id) {
-          link.classList.add('active');
-        }
-      });
+    // Cria overlay
+    const overlay = document.createElement('div');
+    overlay.id = 'overlay';
+    overlay.style.position = 'fixed';
+    overlay.style.top = '0';
+    overlay.style.left = '0';
+    overlay.style.width = '100%';
+    overlay.style.height = '100%';
+    overlay.style.backgroundColor = 'rgba(0,0,0,0.4)';
+    overlay.style.zIndex = '900';
+    overlay.style.display = 'none';
+    document.body.appendChild(overlay);
+
+    // Funções abrir/fechar menu
+    function openSidebar() {
+        sidebar.classList.add('active');
+        overlay.style.display = 'block';
     }
-  });
-}
 
-// Envio do formulário com UX feedback
-function handleFormSubmission(event) {
-  event.preventDefault();
-  const formData = new FormData(this);
+    function closeSidebar() {
+        sidebar.classList.remove('active');
+        overlay.style.display = 'none';
+    }
 
-  fetch('https://hooks.zapier.com/hooks/catch/XXXXXXXXX/XXXXXX/', {
-    method: 'POST',
-    body: formData
-  })
-    .then((response) => {
-      if (response.ok) {
-        alert('Formulário enviado com sucesso!');
-        window.location.href = '/';
-      } else {
-        throw new Error('Erro ao enviar formulário.');
-      }
-    })
-    .catch((error) => {
-      alert('Erro ao enviar formulário. Por favor, tente novamente.');
+    // Botão hamburger
+    menuBtn.addEventListener('click', () => {
+        if (sidebar.classList.contains('active')) {
+            closeSidebar();
+        } else {
+            openSidebar();
+        }
     });
-}
 
-// Menu mobile toggle
-const mobileMenu = document.getElementById('mobile-menu');
-const navList = document.querySelector('.nav-list');
+    // Botão fechar (se existir)
+    if (closeBtn) closeBtn.addEventListener('click', closeSidebar);
 
-mobileMenu.addEventListener('click', () => {
-  navList.classList.toggle('active');
+    // Overlay fecha menu
+    overlay.addEventListener('click', closeSidebar);
+
+    // Fecha menu ao clicar em qualquer link
+    const sidebarLinks = sidebar.querySelectorAll('a');
+    sidebarLinks.forEach(link => {
+        link.addEventListener('click', closeSidebar);
+    });
 });
-
-// Eventos
-window.addEventListener('scroll', updateNavigationOnScroll);
-document.getElementById('contact-form').addEventListener('submit', handleFormSubmission);

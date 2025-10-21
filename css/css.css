@@ -1,18 +1,19 @@
-/* Importação de Fontes do Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;700;900&display=swap');
-
-/* Variáveis de Cores */
+/* -------------------------------------- */
+/* 1. PALETA DE CORES E RESET BÁSICO     */
+/* -------------------------------------- */
 :root {
-    --primary-yellow: #FFD700; /* Amarelo Neon/Dourado - Destaque */
-    --secondary-pink: #E91E63; /* Pink/Magenta Vibrante */
-    --tertiary-blue: #00BCD4;  /* Azul Elétrico/Ciano */
-    --accent-purple: #9C27B0; /* Roxo/Violeta */
-    --background-dark: #121212; /* Fundo Escuro */
-    --text-light: #f4f4f4;    /* Texto Claro */
-    --text-dark: #333;       /* Texto Escuro (para contrastar em fundos claros, se houver) */
+    /* Paleta Principal */
+    --color-primary: #0A3464;
+    --color-secondary: #5B89C2;
+    --color-highlight: #FFC700;
+
+    /* Fundo e texto */
+    --color-clean-bg: #F4F4F4;
+    --color-text: #333333;
+    --color-light-text: #ffffff;
 }
 
-/* Reset Básico */
+/* Reset básico */
 * {
     margin: 0;
     padding: 0;
@@ -20,482 +21,358 @@
 }
 
 body {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Poppins', sans-serif;
     line-height: 1.6;
-    color: var(--text-light);
-    background: var(--background-dark);
-    scroll-behavior: smooth;
+    background-color: var(--color-clean-bg);
+    color: var(--color-text);
 }
 
 .container {
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 20px 0;
 }
 
-/* Header */
-.main-header {
-    background: var(--background-dark);
-    color: var(--text-light);
-    padding: 15px 0;
-    border-bottom: 2px solid var(--secondary-pink);
+a {
+    color: var(--color-secondary);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+/* -------------------------------------- */
+/* 2. CABEÇALHO E NAVEGAÇÃO              */
+/* -------------------------------------- */
+#main-header {
+    background-color: var(--color-light-text);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     position: sticky;
     top: 0;
     z-index: 1000;
 }
 
-.main-header .container {
+.header-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 10px 0;
 }
 
-.main-header .logo {
-    height: 60px; /* Ajuste conforme o tamanho da sua logo */
-    filter: drop-shadow(0 0 5px var(--primary-yellow)); /* Efeito neon sutil */
-}
-
-.main-nav ul {
-    list-style: none;
+#logo-container {
     display: flex;
-}
-
-.main-nav ul li {
-    margin-left: 25px;
-}
-
-.main-nav ul li a {
-    color: var(--text-light);
-    text-decoration: none;
-    font-weight: 600;
-    transition: color 0.3s ease, text-shadow 0.3s ease;
-}
-
-.main-nav ul li a:hover {
-    color: var(--primary-yellow);
-    text-shadow: 0 0 8px var(--primary-yellow), 0 0 15px var(--secondary-pink);
-}
-
-/* Hero Section */
-.hero-section {
-    background: url('https://images.unsplash.com/photo-1517457375823-bff71343753c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTIyMDF8MHwxfHNlYXJjaHw0NXx8Y29uZmV0dGklMjBwYXJ0eXxlbnwwfHx8fDE3MDAwMDAwMDB8MA&ixlib=rb-4.0.3&q=80&w=1080') no-repeat center center/cover;
-    /* Imagem de confetes como fundo, você pode substituir por uma própria */
-    height: 80vh;
-    display: flex;
-    justify-content: center;
     align-items: center;
-    text-align: center;
-    position: relative;
-    overflow: hidden; /* Garante que os confetes não vazem */
 }
 
-/* Overlay para escurecer o background e realçar o texto */
-.hero-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.7); /* Escurece a imagem de fundo */
-    z-index: 1;
+#site-logo {
+    height: 60px;
+    width: auto;
+    object-fit: contain;
 }
 
-.hero-content {
-    position: relative;
-    z-index: 2;
-    padding: 20px;
-    background: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente para o conteúdo */
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(255, 215, 0, 0.5); /* Sombra neon */
-}
-
-.hero-content h1 {
-    font-family: 'Bebas Neue', cursive;
-    font-size: 4.5em;
-    color: var(--primary-yellow);
-    margin-bottom: 10px;
-    text-shadow: 0 0 10px var(--primary-yellow), 0 0 20px var(--secondary-pink);
-}
-
-.hero-content h2 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 2.2em;
-    color: var(--tertiary-blue);
-    margin-bottom: 20px;
-    text-shadow: 0 0 5px var(--tertiary-blue);
-}
-
-.hero-content p {
-    font-size: 1.2em;
-    margin-bottom: 30px;
-    color: var(--text-light);
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/* Botões */
-.btn {
+#site-name {
+    font-size: 1.5em;
+    font-weight: 800;
+    color: var(--color-primary);
+    margin-left: 10px;
     display: inline-block;
-    padding: 12px 25px;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    transition: all 0.3s ease;
-    text-transform: uppercase;
-    letter-spacing: 1px;
 }
 
-.primary-btn {
-    background: var(--primary-yellow);
-    color: var(--background-dark);
-    border: 2px solid var(--primary-yellow);
-    box-shadow: 0 0 10px var(--primary-yellow);
-}
-
-.primary-btn:hover {
-    background: transparent;
-    color: var(--primary-yellow);
-    box-shadow: 0 0 15px var(--primary-yellow), 0 0 25px var(--secondary-pink);
-    transform: translateY(-3px);
-}
-
-.secondary-btn {
-    background: var(--secondary-pink);
-    color: var(--text-light);
-    border: 2px solid var(--secondary-pink);
-    box-shadow: 0 0 10px var(--secondary-pink);
-}
-
-.secondary-btn:hover {
-    background: transparent;
-    color: var(--secondary-pink);
-    box-shadow: 0 0 15px var(--secondary-pink), 0 0 25px var(--tertiary-blue);
-    transform: translateY(-3px);
-}
-
-/* Seções Gerais */
-.section {
-    padding: 80px 0;
-    text-align: center;
-    position: relative;
-    border-bottom: 1px dashed rgba(255, 255, 255, 0.1); /* Separador sutil */
-}
-
-.section h3 {
-    font-family: 'Bebas Neue', cursive;
-    font-size: 3em;
-    margin-bottom: 40px;
-    color: var(--primary-yellow);
-    text-shadow: 0 0 5px var(--primary-yellow);
-}
-
-.section p {
-    font-size: 1.1em;
-    margin-bottom: 20px;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/* Sobre Nós */
-.about-section {
-    background: radial-gradient(circle at center, rgba(var(--secondary-pink), 0.1) 0%, transparent 70%);
-}
-.about-section p {
-    font-weight: 300;
-    line-height: 1.8;
-}
-
-/* Atrações */
-.attractions-section {
-    background: radial-gradient(circle at center, rgba(var(--tertiary-blue), 0.1) 0%, transparent 70%);
-}
-
-.attraction-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-    margin-top: 40px;
-}
-
-.attraction-item {
-    background: rgba(var(--accent-purple), 0.15);
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(var(--accent-purple), 0.4);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 1px solid var(--accent-purple);
-}
-
-.attraction-item:hover {
-    transform: translateY(-5px) scale(1.02);
-    box-shadow: 0 0 20px var(--accent-purple), 0 0 30px var(--secondary-pink);
-}
-
-.attraction-item h4 {
-    font-family: 'Bebas Neue', cursive;
-    font-size: 1.8em;
-    color: var(--tertiary-blue);
-    margin-bottom: 10px;
-    text-shadow: 0 0 5px var(--tertiary-blue);
-}
-
-.attraction-item p {
-    font-size: 0.95em;
-    color: var(--text-light);
-}
-
-/* Ingressos */
-.tickets-section {
-    background: radial-gradient(circle at center, rgba(var(--primary-yellow), 0.1) 0%, transparent 70%);
-}
-
-.highlight-text {
-    font-size: 1.3em;
-    font-weight: bold;
-    color: var(--primary-yellow);
-    text-shadow: 0 0 5px var(--primary-yellow);
-    margin-bottom: 30px;
-}
-
-.ticket-options {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-    margin-top: 40px;
-}
-
-.ticket-card {
-    background: rgba(255, 255, 255, 0.05);
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(255, 215, 0, 0.2);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 1px solid rgba(255, 215, 0, 0.3);
-}
-
-.ticket-card.featured {
-    border: 2px solid var(--primary-yellow);
-    box-shadow: 0 0 20px var(--primary-yellow), 0 0 30px var(--secondary-pink);
-    transform: scale(1.05);
-}
-
-.ticket-card:hover:not(.featured) {
-    transform: translateY(-5px) scale(1.02);
-    box-shadow: 0 0 15px rgba(var(--primary-yellow), 0.4), 0 0 25px rgba(var(--secondary-pink), 0.3);
-}
-
-.ticket-card h4 {
-    font-family: 'Bebas Neue', cursive;
-    font-size: 2em;
-    color: var(--primary-yellow);
-    margin-bottom: 15px;
-    text-shadow: 0 0 5px var(--primary-yellow);
-}
-
-.ticket-card p {
-    font-size: 1em;
-    color: var(--text-light);
-    min-height: 40px; /* Para alinhar cards com textos diferentes */
-}
-
-.ticket-card .price {
-    display: block;
-    font-family: 'Bebas Neue', cursive;
-    font-size: 2.8em;
-    color: var(--secondary-pink);
-    margin: 20px 0;
-    text-shadow: 0 0 8px var(--secondary-pink);
-}
-
-.ticket-card .btn {
-    margin-top: 20px;
-    width: 100%;
-}
-
-.small-text {
-    font-size: 0.9em;
-    color: rgba(255, 255, 255, 0.7);
-    margin-top: 30px;
-}
-
-/* Contato */
-.contact-section {
-    background: radial-gradient(circle at center, rgba(var(--secondary-pink), 0.08) 0%, transparent 70%);
-}
-
-.contact-form {
+/* Menu Hamburger (Mobile) */
+#menu-toggle {
     display: flex;
     flex-direction: column;
-    max-width: 500px;
-    margin: 0 auto 40px auto;
-    gap: 15px;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1100;
 }
 
-.contact-form input,
-.contact-form textarea {
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid var(--tertiary-blue);
-    padding: 12px;
-    border-radius: 5px;
-    color: var(--text-light);
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1em;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+.bar {
+    width: 100%;
+    height: 3px;
+    background-color: var(--color-primary);
+    transition: all 0.3s linear;
 }
 
-.contact-form input::placeholder,
-.contact-form textarea::placeholder {
-    color: rgba(255, 255, 255, 0.6);
+/* -------------------------------------- */
+/* 3. MENU LATERAL (SIDEBAR)             */
+/* -------------------------------------- */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -300px;
+    width: 300px;
+    height: 100%;
+    background-color: var(--color-primary);
+    color: #fff;
+    transition: left 0.3s ease;
+    z-index: 1000;
+    overflow-y: auto;
 }
 
-.contact-form input:focus,
-.contact-form textarea:focus {
-    outline: none;
-    border-color: var(--primary-yellow);
-    box-shadow: 0 0 8px var(--primary-yellow);
+.sidebar.active {
+    left: 0;
 }
 
-.contact-form textarea {
-    min-height: 120px;
-    resize: vertical;
+.sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
 }
 
-.contact-form .btn {
-    align-self: flex-end; /* Alinha o botão à direita */
-    width: auto; /* Deixa o botão se ajustar ao conteúdo */
-}
-
-.social-media {
-    margin-top: 30px;
-}
-
-.social-media p {
-    margin-bottom: 15px;
-    font-weight: 600;
-}
-
-.social-media a {
-    color: var(--tertiary-blue);
-    text-decoration: none;
-    margin: 0 15px;
+.sidebar-header h2 {
     font-size: 1.2em;
-    transition: color 0.3s ease, text-shadow 0.3s ease;
+    margin: 0;
 }
 
-.social-media a:hover {
-    color: var(--primary-yellow);
-    text-shadow: 0 0 8px var(--primary-yellow);
+#close-btn {
+    font-size: 1.5em;
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
 }
 
-/* Footer */
-.main-footer {
-    background: var(--background-dark);
-    color: rgba(255, 255, 255, 0.7);
-    padding: 25px 0;
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li a {
+    display: block;
+    padding: 15px 20px;
+    color: #fff;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.sidebar ul li a:hover {
+    background-color: #0066ff;
+}
+
+/* Botão Hamburger fixo */
+#menu-btn {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    font-size: 1.8em;
+    background: none;
+    border: none;
+    color: var(--color-primary);
+    cursor: pointer;
+    z-index: 1100;
+}
+
+/* -------------------------------------- */
+/* 4. SEÇÕES PRINCIPAIS (DESTAQUES, NEWS)*/
+/* -------------------------------------- */
+.content-block {
+    background-color: var(--color-light-text);
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+.content-block h2 {
+    color: var(--color-primary);
+    border-bottom: 3px solid var(--color-highlight);
+    padding-bottom: 10px;
+    margin-bottom: 25px;
+    font-weight: 800;
+}
+
+.news-card {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.news-card:hover {
+    transform: translateY(-5px);
+}
+
+.news-card img.news-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.news-text {
+    padding: 20px;
+}
+
+.news-text h3 {
+    color: var(--color-primary);
+    margin-bottom: 10px;
+}
+
+.news-text p {
+    color: #333;
+    line-height: 1.6;
+}
+
+.news-text a {
+    display: inline-block;
+    margin-top: 10px;
+    color: #fff;
+    background-color: var(--color-primary);
+    padding: 10px 15px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.news-text a:hover {
+    background-color: #0055ff;
+}
+
+/* -------------------------------------- */
+/* 5. RODAPÉ E BOTÕES FLUTUANTES          */
+/* -------------------------------------- */
+footer {
+    background-color: var(--color-primary);
+    color: var(--color-light-text);
     text-align: center;
-    border-top: 1px solid var(--secondary-pink);
+    padding: 25px 0;
     font-size: 0.9em;
 }
 
-/* Responsividade */
+footer a {
+    color: var(--color-highlight);
+    text-decoration: underline;
+    margin: 0 10px;
+}
+
+#floating-buttons {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 2000;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.whatsapp-btn, .social-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    color: var(--color-light-text);
+}
+
+.whatsapp-btn { background-color: #25d366; } 
+.social-btn { background-color: var(--color-primary); } 
+
+.whatsapp-btn svg, .social-btn svg { width: 28px; height: 28px; }
+
+/* -------------------------------------- */
+/* 6. RESPONSIVIDADE                       */
+/* -------------------------------------- */
 @media (max-width: 768px) {
-    .main-header .container {
-        flex-direction: column;
+    /* Menu mobile visível */
+    #menu-toggle { display: flex; }
+    #main-nav {
+        display: none; /* Escondido até clicar */
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background-color: var(--color-primary);
         text-align: center;
     }
 
-    .main-nav ul {
-        margin-top: 15px;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
+    #main-nav.show { display: block; }
+}
 
-    .main-nav ul li {
-        margin: 0 10px 10px 10px;
+@media (min-width: 769px) {
+    #menu-toggle { display: none; }
+    #main-nav {
+        display: flex !important;
+        position: static;
+        flex-direction: row;
+        max-height: none;
+        overflow: visible;
+        background-color: transparent;
+        padding: 0;
+        text-align: left;
     }
-
-    .hero-content h1 {
-        font-size: 3em;
+    #main-nav a {
+        color: var(--color-primary);
+        padding: 10px 15px;
     }
-
-    .hero-content h2 {
-        font-size: 1.5em;
-    }
-
-    .section h3 {
-        font-size: 2.2em;
-    }
-
-    .attraction-grid,
-    .ticket-options {
-        grid-template-columns: 1fr;
-    }
-
-    .ticket-card.featured {
-        transform: none; /* Remove a escala no mobile para evitar que fique muito grande */
+    #main-nav a:hover {
+        color: var(--color-highlight);
+        background-color: transparent;
     }
 }
 
-@media (max-width: 480px) {
-    .main-header .logo {
-        height: 50px;
-    }
-
-    .hero-content h1 {
-        font-size: 2.5em;
-    }
-
-    .hero-content h2 {
-        font-size: 1.2em;
-    }
-
-    .hero-content p {
-        font-size: 1em;
-    }
-
-    .btn {
-        padding: 10px 20px;
-        font-size: 0.9em;
-    }
-
-    .section h3 {
-        font-size: 1.8em;
-    }
-
-    .section p {
-        font-size: 1em;
-    }
-
-    .ticket-card .price {
-        font-size: 2.2em;
-    }
-}
-
-
-
-.whatsapp-float {
-    position: fixed;
-    width: 60px;
-    height: 60px;
-    bottom: 20px;
-    right: 20px;
-    background-color: #25D366; /* Cor do WhatsApp */
-    color: #FFF;
-    border-radius: 50px;
+/* -------------------------------------- */
+/* 7. BARRA DE BUSCA                       */
+/* -------------------------------------- */
+#search-bar {
+    background: linear-gradient(135deg, #1e90ff, #00bfff);
+    padding: 60px 20px;
     text-align: center;
-    font-size: 30px;
-    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.4);
-    z-index: 9999; 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: transform 0.3s ease-in-out;
-}
-.whatsapp-float:hover {
-    transform: scale(1.1);
     color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+}
+
+#search-title {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+#search-subtitle {
+    font-size: 1rem;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+.search-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+#search-form input[type="search"] {
+    flex: 1;
+    padding: 12px 20px;
+    border-radius: 30px;
+    border: none;
+    font-size: 1rem;
+}
+
+#search-form button {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 30px;
+    background-color: #ffce00;
+    color: #1e1e1e;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#search-form button:hover {
+    background-color: #ffd633;
+    transform: scale(1.05);
 }
