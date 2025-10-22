@@ -2,9 +2,7 @@
    DE BOA PLANALTINA - ESTILO PRINCIPAL
 ========================================================= */
 
-/* ----------------------------
-   1. RESET E CONFIGURAÇÕES GLOBAIS
----------------------------- */
+/* RESET */
 * {
   margin: 0;
   padding: 0;
@@ -13,96 +11,71 @@
 
 html {
   scroll-behavior: smooth;
+  font-size: 16px;
 }
 
 body {
   font-family: 'Poppins', sans-serif;
-  line-height: 1.6;
   color: #222;
   background-color: #f9f9f9;
+  line-height: 1.6;
 }
 
-/* Links */
-a {
-  text-decoration: none;
-  color: inherit;
-  transition: 0.3s ease;
-}
-
-a:hover {
-  color: var(--highlight-color);
-}
-
-/* Containers */
-.container {
-  width: 90%;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-/* ----------------------------
-   2. VARIÁVEIS DE CORES
----------------------------- */
-:root {
-  --primary-color: #0A3464; /* azul profundo */
-  --secondary-color: #5B89C2; /* azul claro */
-  --highlight-color: #FFC700; /* amarelo */
-  --bg-light: #f9f9f9;
-  --text-dark: #222;
-  --cta-color: #0A3464;
-  --cta-hover: #FFC700;
-}
-
-/* ===========================
+/* =========================================================
    BOTÕES FLUTUANTES
-=========================== */
+========================================================= */
 #floating-buttons {
   position: fixed;
-  right: 20px;
-  bottom: 20px;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
   display: flex;
   flex-direction: column;
   gap: 10px;
-  z-index: 1000;
+  z-index: 999;
 }
 
 #floating-buttons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 50px;
   height: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50%;
+  background-color: #00b894;
   color: #fff;
-  background-color: var(--primary-color);
-  font-size: 24px;
+  border-radius: 50%;
+  text-decoration: none;
+  transition: all 0.3s ease;
 }
 
 #floating-buttons a:hover {
-  background-color: var(--highlight-color);
-  color: var(--primary-color);
+  transform: scale(1.1);
+  background-color: #098d6d;
 }
 
-.whatsapp-btn { background-color: #25d366; }
-.instagram-btn { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); }
-.youtube-btn { background-color: #ff0000; }
+#floating-buttons svg {
+  width: 24px;
+  height: 24px;
+}
 
-/* ===========================
-   CABEÇALHO
-=========================== */
-header {
-  background-color: var(--primary-color);
+/* =========================================================
+   CABEÇALHO PRINCIPAL
+========================================================= */
+#main-header {
+  background-color: #0066cc;
   color: #fff;
-  padding: 10px 0;
   position: sticky;
   top: 0;
-  z-index: 900;
+  z-index: 100;
 }
 
 .header-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  max-width: 1200px;
+  margin: auto;
+  padding: 10px 20px;
 }
 
 #logo-container {
@@ -113,57 +86,80 @@ header {
 
 #site-logo {
   width: 50px;
-  height: 50px;
-  object-fit: cover;
+  height: auto;
+  border-radius: 50%;
 }
 
 #site-name {
   font-weight: 800;
-  font-size: 1.4rem;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
 }
 
-/* Menu */
-#main-nav {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  margin-top: 10px;
-}
-
-#main-nav a {
-  color: #fff;
-  font-weight: 600;
-}
-
-#main-nav a:hover {
-  color: var(--highlight-color);
-}
-
-/* Botão Hamburger (Escondido por padrão no desktop) */
 #menu-toggle {
   display: none;
   flex-direction: column;
-  gap: 5px;
-  border: none;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
   background: none;
+  border: none;
   cursor: pointer;
 }
 
 #menu-toggle .bar {
-  width: 25px;
   height: 3px;
+  width: 100%;
   background-color: #fff;
-  border-radius: 2px;
+  border-radius: 3px;
 }
 
-/* ===========================
-   BARRA DE BUSCA
-=========================== */
-#search-bar {
-  background-color: var(--secondary-color);
+#main-nav {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  background-color: #005bb5;
+}
+
+#main-nav a {
   color: #fff;
-  padding: 40px 0;
+  text-decoration: none;
+  padding: 15px 10px;
+  transition: all 0.3s ease;
+  font-weight: 600;
+}
+
+#main-nav a:hover {
+  background-color: #004a99;
+  border-radius: 5px;
+}
+
+/* Menu mobile */
+@media (max-width: 768px) {
+  #menu-toggle {
+    display: flex;
+  }
+
+  #main-nav {
+    flex-direction: column;
+    align-items: center;
+    display: none;
+    width: 100%;
+  }
+
+  #main-nav.active {
+    display: flex;
+  }
+}
+
+/* =========================================================
+   BARRA DE BUSCA
+========================================================= */
+#search-bar {
+  background: linear-gradient(90deg, #00b894, #098d6d);
+  color: #fff;
   text-align: center;
+  padding: 40px 20px;
 }
 
 #search-bar h2 {
@@ -172,460 +168,374 @@ header {
 }
 
 #search-bar p {
+  font-size: 1.1rem;
   margin-bottom: 20px;
+}
+
+#search-form {
+  max-width: 600px;
+  margin: auto;
 }
 
 .search-wrapper {
   display: flex;
-  justify-content: center;
   gap: 10px;
 }
 
-.search-wrapper input {
-  width: 300px;
-  padding: 10px;
-  border-radius: 5px;
+.search-wrapper input[type="search"] {
+  flex: 1;
+  padding: 10px 15px;
   border: none;
-  outline: none;
+  border-radius: 5px;
+  font-size: 1rem;
 }
 
 .search-wrapper button {
   padding: 10px 20px;
-  border-radius: 5px;
+  background-color: #0066cc;
+  color: #fff;
   border: none;
-  background-color: var(--highlight-color);
-  color: var(--primary-color);
+  border-radius: 5px;
   cursor: pointer;
   font-weight: 600;
-  transition: 0.3s ease;
+  transition: background-color 0.3s ease;
 }
 
 .search-wrapper button:hover {
-  background-color: #fff;
+  background-color: #004a99;
 }
 
-/* ===========================
-   SEÇÕES PRINCIPAIS E CTAS
-=========================== */
+/* =========================================================
+   SEÇÕES PRINCIPAIS
+========================================================= */
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* Home */
 .content-block {
-  padding: 60px 0;
+  padding: 40px 20px;
+  text-align: center;
 }
 
 .content-block h2 {
   font-size: 2rem;
-  color: var(--primary-color);
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
 .content-block p {
-  font-size: 1rem;
-  margin-bottom: 20px;
+  font-size: 1.1rem;
+  margin-bottom: 25px;
 }
 
 .cta-grid {
   display: flex;
-  gap: 15px;
   flex-wrap: wrap;
-  margin-top: 20px;
+  justify-content: center;
+  gap: 15px;
 }
 
 .cta-button {
-  padding: 12px 20px;
-  border-radius: 8px;
-  background-color: var(--secondary-color);
+  padding: 12px 25px;
+  background-color: #00b894;
   color: #fff;
+  border-radius: 8px;
   font-weight: 600;
-  transition: 0.3s ease;
+  text-decoration: none;
+  transition: all 0.3s ease;
 }
 
 .cta-button:hover {
-  background-color: var(--highlight-color);
-  color: var(--primary-color);
+  background-color: #098d6d;
 }
 
 .primary-cta {
-  background-color: var(--highlight-color);
-  color: var(--primary-color);
+  background-color: #0066cc;
 }
 
-/* ======================================= */
-/* ESTILOS GERAIS DA SEÇÃO DE EXPERIÊNCIA */
-/* ======================================= */
-
-.experience-section {
-    padding: 60px 20px;
-    background-color: var(--bg-light); /* Usando variável */
+.primary-cta:hover {
+  background-color: #004a99;
 }
-
-.section-header {
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-.section-header h2 {
-    font-size: 2.5em;
-    color: var(--text-dark);
-    margin-bottom: 10px;
-}
-
-.section-header .lead {
-    font-size: 1.1em;
-    color: #666;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-/* Filtros */
-.experience-filters {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-bottom: 40px;
-}
-
-.filter-btn {
-    background-color: #fff;
-    color: var(--primary-color);
-    border: 2px solid var(--primary-color);
-    padding: 10px 20px;
-    border-radius: 25px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    font-weight: 600;
-}
-
-.filter-btn:hover {
-    background-color: #E6EEF7; /* Cor mais clara no hover */
-}
-
-.filter-btn.active {
-    background-color: var(--primary-color);
-    color: #fff;
-    border-color: #08284A;
-}
-
-/* Grid de Cards */
-.experience-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.experience-card {
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    display: flex;
-    flex-direction: column;
-}
-
-.experience-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-}
-
-/* Estrutura da imagem no card */
-.card-figure {
-    position: relative;
-    overflow: hidden;
-    height: 220px; /* Altura padrão para as imagens */
-}
-
-.card-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease;
-}
-
-.experience-card:hover .card-img {
-    transform: scale(1.05);
-}
-
-/* AJUSTE SOLICITADO: Diminuir a Imagem do Museu */
-/* Use esta classe no <figure> do card do museu: <figure class="card-figure museum-image-figure"> */
-.museum-image-figure {
-    height: 150px; /* Altura reduzida para o museu */
-}
-
-
-.card-badge {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    background-color: var(--highlight-color);
-    color: var(--primary-color);
-    padding: 5px 10px;
-    border-radius: 4px;
-    font-size: 0.8em;
-    font-weight: bold;
-    z-index: 10;
-}
-
-/* Conteúdo do Card */
-.card-content {
-    padding: 20px;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-}
-
-.card-content h3 {
-    font-size: 1.4em;
-    margin-top: 0;
-    margin-bottom: 10px;
-}
-
-.card-content h3 a {
-    color: var(--text-dark);
-    text-decoration: none;
-}
-
-.card-content p {
-    color: #777;
-    margin-bottom: 15px;
-    line-height: 1.5;
-    flex-grow: 1;
-}
-
-/* Botões (CTAs) */
-.btn {
-    display: inline-block;
-    padding: 10px 15px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
-    text-align: center;
-    transition: background-color 0.3s ease;
-    margin-top: auto;
-}
-
-.btn-primary {
-    background-color: var(--primary-color);
-    color: #fff;
-}
-
-.btn-primary:hover {
-    background-color: #08284A;
-}
-
-.btn-secondary {
-    background-color: var(--secondary-color);
-    color: #fff;
-}
-
-.btn-secondary:hover {
-    background-color: #3D6DAA;
-}
-
-/* Estilo do CTA Box final */
-.cta-box {
-    background-color: #fff;
-    padding: 30px;
-    border-radius: 8px;
-    text-align: center;
-    grid-column: 1 / -1;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-}
-
-.cta-box h4 {
-    font-size: 1.6em;
-    color: var(--text-dark);
-    margin-bottom: 10px;
-}
-
-
-/* ===========================
-   OUTRAS SEÇÕES
-=========================== */
-.highlight-section {
-  background-color: #fff;
-  padding: 60px 0;
-  text-align: center;
-}
-
-.hero h1 {
-  font-size: 2.5rem;
-  color: var(--primary-color);
-  margin-bottom: 10px;
-}
-
-.hero .lead {
-  font-size: 1.2rem;
-  color: #555;
-}
-
-.gallery img,
-.tourism-img,
-.news-image {
-  /* Estas imagens são genéricas ou estão mal definidas. Mantenho o tamanho original para não quebrar. */
-  width: 80%;
-  max-width: 60px;
-  height: auto;
-  margin: 20px auto;
-  display: block;
-  border-radius: 10px;
-  box-shadow: 0px 5px 15px rgba(0,0,0,0.2);
-}
-
-.video-wrap video {
-  width: 100%;
-  max-width: 800px;
-  border-radius: 10px;
-  margin-top: 20px;
-}
-
-
-.imagem-responsiva {
-  max-width: 100%; /* Garante que a imagem nunca ultrapasse a largura do seu elemento pai. */
-  height: auto;    /* Mantém a proporção original da imagem ao redimensionar a largura. */
-  display: block;  /* Ajuda a remover espaços indesejados abaixo da imagem. */
-}
-
-
 
 /* Notícias */
 .news-card {
   display: flex;
-  gap: 20px;
+  flex-wrap: wrap;
   background-color: #fff;
-  padding: 20px;
-  margin: 20px 0;
-  border-radius: 10px;
-  box-shadow: 0px 5px 15px rgba(0,0,0,0.1);
-  align-items: center;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
 }
 
-.news-card img {
-  width: 150px;
-  border-radius: 10px;
+.news-card:hover {
+  transform: translateY(-5px);
+}
+
+.news-image {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  object-fit: cover;
+}
+
+.news-text {
+  padding: 20px;
+  flex: 1;
 }
 
 .news-text h3 {
-  color: var(--primary-color);
+  margin-bottom: 10px;
+  font-size: 1.3rem;
+}
+
+.news-text p {
+  margin-bottom: 15px;
 }
 
 .news-text a {
-  display: inline-block;
-  margin-top: 10px;
-  color: var(--highlight-color);
+  color: #0066cc;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.news-text a:hover {
+  text-decoration: underline;
 }
 
 /* Turismo */
-.content-navigation {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  margin-bottom: 40px;
+.tourism-section {
+  background-color: #e8f6f3;
+  padding: 40px 20px;
 }
 
-.tourism-detail {
+.section-header h2 {
   text-align: center;
-  margin-bottom: 40px;
+  font-size: 2rem;
+  margin-bottom: 10px;
 }
 
-/* Planos */
-.plans-grid {
-  display: flex;
+.section-header p.lead {
+  text-align: center;
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+}
+
+.experience-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 20px;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin: 20px 0;
 }
 
-.plan-card {
-  background-color: var(--secondary-color);
+.experience-card {
+  background-color: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.experience-card:hover {
+  transform: translateY(-5px);
+}
+
+.experience-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: #0066cc;
   color: #fff;
-  padding: 30px 20px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.card-content {
+  padding: 15px;
+}
+
+.card-content h3 {
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+.card-content p {
+  margin-bottom: 15px;
+}
+
+.btn-primary {
+  display: inline-block;
+  padding: 10px 15px;
+  background-color: #00b894;
+  color: #fff;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #098d6d;
+}
+
+/* =========================================================
+   EVENTO PROMOCIONAL
+========================================================= */
+#evento-festa {
+  padding: 4rem 2rem;
+  background: linear-gradient(135deg, #ff7a18, #ff4e00);
+  color: #fff;
+  text-align: center;
+}
+
+#evento-festa .hero h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.3);
+}
+
+#evento-festa .hero .lead {
+  font-size: 1.2rem;
+  margin-bottom: 3rem;
+}
+
+#evento-festa .post {
+  background: rgba(255, 255, 255, 0.95);
+  color: #222;
+  padding: 2rem;
   border-radius: 15px;
-  width: 200px;
-  text-align: center;
-  transition: 0.3s ease;
-  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+  max-width: 800px;
+  margin: 0 auto 3rem;
+  text-align: left;
 }
 
-.plan-card:hover {
-  background-color: var(--highlight-color);
-  color: var(--primary-color);
+#evento-festa .post h2 {
+  color: #ff4e00;
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
 }
 
-.featured-plan {
-  border: 3px solid var(--highlight-color);
+#evento-festa .post p {
+  margin-bottom: 1rem;
+  font-size: 1rem;
 }
 
-/* ===========================
+#evento-festa .post strong {
+  color: #ff7a18;
+}
+
+#evento-festa .cta {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+#evento-festa .btn {
+  background-color: #ff4e00;
+  color: #fff;
+  padding: 0.8rem 1.5rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+#evento-festa .btn:hover {
+  background-color: #ff7a18;
+  transform: scale(1.05);
+}
+
+#evento-festa .link-ghost {
+  border: 2px solid #ff4e00;
+  color: #ff4e00;
+  padding: 0.8rem 1.5rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+#evento-festa .link-ghost:hover {
+  background-color: #ff4e00;
+  color: #fff;
+  transform: scale(1.05);
+}
+
+#evento-festa .video-wrap {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+#evento-festa .video-wrap h3 {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+#evento-festa .video-wrap video {
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+
+/* =========================================================
    RODAPÉ
-=========================== */
+========================================================= */
 footer {
-  background-color: var(--primary-color);
+  background-color: #0066cc;
   color: #fff;
   text-align: center;
-  padding: 20px 0;
+  padding: 25px 20px;
+  margin-top: 40px;
 }
 
 footer a {
   color: #fff;
+  text-decoration: none;
   margin: 0 10px;
 }
 
 footer a:hover {
-  color: var(--highlight-color);
+  text-decoration: underline;
 }
 
-/* ===========================
-   RESPONSIVIDADE
-=========================== */
-@media (max-width: 1024px) {
+/* =========================================================
+   RESPONSIVO
+========================================================= */
+@media (max-width: 768px) {
   .news-card {
     flex-direction: column;
-    text-align: center;
   }
 
   .search-wrapper {
     flex-direction: column;
-    gap: 10px;
-  }
-}
-
-@media (max-width: 768px) {
-  /* Esconde o menu no mobile e mostra o botão hamburger */
-  #menu-toggle {
-    display: flex;
   }
 
-  header .container {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .header-content {
+  .search-wrapper button {
     width: 100%;
-    justify-content: space-between;
   }
 
-  #main-nav {
-    flex-direction: column;
-    width: 100%;
+  #evento-festa .post {
     text-align: center;
-    padding: 10px 0;
-    margin-top: 10px;
   }
 
-  #main-nav.hidden {
-    display: none;
+  #evento-festa .cta {
+    flex-direction: column;
   }
 
-  #main-nav a {
-    padding: 10px 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  }
-
-  #main-nav a:last-child {
-    border-bottom: none;
+  #evento-festa .video-wrap video {
+    max-width: 100%;
   }
 }
