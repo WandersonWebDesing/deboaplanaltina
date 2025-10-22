@@ -1,52 +1,42 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const sidebar = document.getElementById('sidebar');
-    const menuBtn = document.getElementById('menu-btn');
+    const menuToggle = document.getElementById('menu-toggle');
+    const sidebar = document.getElementById('main-nav');
     const closeBtn = document.getElementById('close-btn');
 
-    if (!sidebar || !menuBtn) return; // interrompe se não existir
+    if (!menuToggle || !sidebar) return;
 
-    // Cria overlay
-    const overlay = document.createElement('div');
-    overlay.id = 'overlay';
-    overlay.style.position = 'fixed';
-    overlay.style.top = '0';
-    overlay.style.left = '0';
-    overlay.style.width = '100%';
-    overlay.style.height = '100%';
-    overlay.style.backgroundColor = 'rgba(0,0,0,0.4)';
-    overlay.style.zIndex = '900';
-    overlay.style.display = 'none';
-    document.body.appendChild(overlay);
+    // Função para abrir/fechar menu
+    const toggleMenu = () => sidebar.classList.toggle('active');
 
-    // Funções abrir/fechar menu
-    function openSidebar() {
-        sidebar.classList.add('active');
-        overlay.style.display = 'block';
+    // Abrir menu ao clicar no botão sandwich
+    menuToggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        toggleMenu();
+    });
+
+    // Fechar menu ao clicar no botão de fechar
+    if (closeBtn) {
+        closeBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            sidebar.classList.remove('active');
+        });
     }
 
-    function closeSidebar() {
+    // Fechar menu clicando fora
+    document.addEventListener('click', () => {
         sidebar.classList.remove('active');
-        overlay.style.display = 'none';
+    });
+
+    // Evitar fechamento ao clicar dentro do sidebar
+    sidebar.addEventListener('click', (e) => {
+        e.stopPropagation();
+    });
+
+    // Atualizar a página em 40 minutos (2400000ms) se não houver formulários ativos
+    const forms = document.querySelectorAll('form');
+    const hasActiveForm = Array.from(forms).some(form => form.dataset.active === 'true');
+
+    if (!hasActiveForm) {
+        setTimeout(() => location.reload(), 2400000);
     }
-
-    // Botão hamburger
-    menuBtn.addEventListener('click', () => {
-        if (sidebar.classList.contains('active')) {
-            closeSidebar();
-        } else {
-            openSidebar();
-        }
-    });
-
-    // Botão fechar (se existir)
-    if (closeBtn) closeBtn.addEventListener('click', closeSidebar);
-
-    // Overlay fecha menu
-    overlay.addEventListener('click', closeSidebar);
-
-    // Fecha menu ao clicar em qualquer link
-    const sidebarLinks = sidebar.querySelectorAll('a');
-    sidebarLinks.forEach(link => {
-        link.addEventListener('click', closeSidebar);
-    });
 });
